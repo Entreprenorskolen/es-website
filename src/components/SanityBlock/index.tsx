@@ -1,13 +1,11 @@
 import { Block } from "@app/types";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
 import { PRIMARY_GRAY } from "@app/constants";
-
-// ✅ Define types for children props
 import {
   PortableTextComponentProps,
-  PortableTextBlock,
   PortableTextMarkComponentProps,
 } from "@portabletext/react";
+import type { PortableTextBlock } from "@portabletext/types";
 
 interface SanityBlockProps {
   blocks: Block[];
