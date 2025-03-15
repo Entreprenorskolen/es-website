@@ -1,3 +1,4 @@
 export * from "./urls";
-export * from "./nav";
+export * from "./page_links";
 export * from "./select";
+export * from "./colors";

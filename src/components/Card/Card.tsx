@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { PRIMARY_BLUE } from "@app/constants/colors";
 import { cn } from "@app/lib/utils";
 
 const Card = React.forwardRef<
@@ -36,6 +36,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn("font-semibold leading-none tracking-tight", className)}
+    style={{ color: PRIMARY_BLUE }}
     {...props}
   />
 ));

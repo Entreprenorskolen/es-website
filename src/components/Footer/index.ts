@@ -1,2 +1,1 @@
-export * from "./Footer";
-export * from "./FooterSocials";
+export { Footer } from "./Footer";

@@ -1,25 +1,24 @@
-import { client } from "@app/config";
-import { ProgramStructurePage } from "@app/types";
-import { CernAndBostonPage } from "@app/types";
 import ProgramPage from "./ProgramPage";
-
-async function getDataCernAndBoston() {
-  const query = `*[ _type == 'cernAndBoston' ]`;
-  return client.fetch<CernAndBostonPage[]>(query).then((res) => res[0]);
-}
-
-async function getData() {
-  const query = `*[ _type == 'programStructure' ]`;
-  return client.fetch<ProgramStructurePage[]>(query).then((res) => res[0]);
-}
+import { getData } from "./get_data";
 
 export default async function Program() {
   const content = await getData();
-  const cern = await getDataCernAndBoston();
+
+  if (!content) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center">
+        <h1>No program data available</h1>
+      </main>
+    );
+  }
 
   return (
-    <main className="flex min-h-screen flex-col mx-8">
-      <ProgramPage program={content} cern={cern} />
-    </main>
+    <>
+      <div className="w-full px-4 sm:px-6 md:px-8 mt-12 md:mt-24">
+        <main className="max-w-7xl mx-auto">
+          <ProgramPage program={content} />
+        </main>
+      </div>
+    </>
   );
 }

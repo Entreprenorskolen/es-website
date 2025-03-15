@@ -8,15 +8,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  H6,
 } from "@app/components";
 import Link from "next/link";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 import { ScrollArea } from "@app/components/Dialogs/ScrollArea";
 import { splitTextIntoParagraphs } from "@app/util";
+import { cn } from "@app/lib/utils";
 
 interface StudentDialogProps {
   student: Student;
+  className?: string;
 }
 
 const getFirstName = (name: string) => {
@@ -32,20 +33,20 @@ const StartupCard = (student: Student) => {
         width={175}
         height={225}
       />
-      <H6 className="font-medium group-hover:bg-accent group-hover:text-background text-center duration-300 w-full">
+      <p className="font-medium text-center w-full text-black hover:bg-[#FF5C00] hover:text-white transition-all duration-300">
         {getFirstName(student.name)}
-      </H6>
+      </p>
     </>
   );
 };
 
-const StudentDialog = ({ student }: StudentDialogProps) => {
+const StudentDialog = ({ student, className }: StudentDialogProps) => {
   const noDescription =
     student.description === null || student.description === undefined;
 
   if (noDescription) {
     return (
-      <div className="flex flex-col items-center group">
+      <div className={cn("flex flex-col items-center group", className)}>
         <StartupCard {...student} />
       </div>
     );
@@ -53,8 +54,10 @@ const StudentDialog = ({ student }: StudentDialogProps) => {
 
   return (
     <Dialog>
-      <DialogTrigger className="flex flex-col items-center group ">
-        <StartupCard {...student} />
+      <DialogTrigger asChild>
+        <div className={cn("cursor-pointer hover:opacity-80", className)}>
+          <StartupCard {...student} />
+        </div>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader className="flex flex-row justify-start items-center">
@@ -85,7 +88,7 @@ const StudentDialog = ({ student }: StudentDialogProps) => {
         </DialogHeader>
         <div className="text-black flex flex-col justify-center">
           <ScrollArea className="max-h-[200px] md:max-h-[600px]">
-            {splitTextIntoParagraphs(student.description, 500).map(
+            {splitTextIntoParagraphs(student.description || "", 500).map(
               (paragraph, index) => (
                 <p key={index} className="mb-2">
                   {paragraph}

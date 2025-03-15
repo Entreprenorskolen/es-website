@@ -1,42 +1,68 @@
 import { Block } from "@app/types";
 import { PortableText, PortableTextReactComponents } from "@portabletext/react";
+import { PRIMARY_GRAY } from "@app/constants";
+
+// ✅ Define types for children props
+import {
+  PortableTextComponentProps,
+  PortableTextBlock,
+  PortableTextMarkComponentProps,
+} from "@portabletext/react";
 
 interface SanityBlockProps {
   blocks: Block[];
   customComponents?: Partial<PortableTextReactComponents>;
 }
 
+// ✅ Use PortableTextComponentProps for block components
 const components: Partial<PortableTextReactComponents> = {
   block: {
-    h1: (props: any) => (
-      <h1 className="text-2xl font-bold text-accent mt-4">{props.children}</h1>
+    h1: ({ children }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h1 className="text-2xl font-bold text-accent mt-4">{children}</h1>
     ),
-    h2: (props: any) => (
-      <h2 className="text-2xl font-bold text-accent mt-4">{props.children}</h2>
+    h2: ({ children }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h2 className="text-2xl font-bold text-accent mt-4">{children}</h2>
     ),
-    h3: (props: any) => (
-      <h3 className="text-2xl font-bold text-accent mt-4">{props.children}</h3>
+    h3: ({ children }: PortableTextComponentProps<PortableTextBlock>) => (
+      <h3 className="text-2xl font-bold text-accent mt-4">{children}</h3>
     ),
-    normal: (props: any) => <p className="text-black mt-2">{props.children}</p>,
+    normal: ({ children }: PortableTextComponentProps<PortableTextBlock>) => (
+      <p className="mt-2" style={{ color: PRIMARY_GRAY }}>
+        {children}
+      </p>
+    ),
   },
-  listItem: (props: any) => (
-    <li className="list-disc list-inside">{props.children}</li>
+  listItem: ({ children }: PortableTextComponentProps<PortableTextBlock>) => (
+    <li className="list-disc list-inside">{children}</li>
   ),
-  list: (props: any) => (
-    <ul className="list-disc list-inside ml-4">{props.children}</ul>
+  list: ({ children }: PortableTextComponentProps<PortableTextBlock>) => (
+    <ul className="list-disc list-inside ml-4">{children}</ul>
   ),
   marks: {
-    strong: (props: any) => (
-      <strong className="font-bold">{props.children}</strong>
+    strong: ({
+      children,
+    }: PortableTextMarkComponentProps<PortableTextBlock>) => (
+      <strong className="font-bold">{children}</strong>
     ),
-    em: (props: any) => <em className="italic">{props.children}</em>,
-    link: ({ value, children }: any) => {
-      return (
-        <a href={value?.href} target={"_blank"} className="underline">
-          {children}
-        </a>
-      );
-    },
+    em: ({ children }: PortableTextMarkComponentProps<PortableTextBlock>) => (
+      <em className="italic">{children}</em>
+    ),
+    link: ({
+      value,
+      children,
+    }: {
+      value?: { href?: string };
+      children: React.ReactNode;
+    }) => (
+      <a
+        href={value?.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline"
+      >
+        {children}
+      </a>
+    ),
   },
 };
 

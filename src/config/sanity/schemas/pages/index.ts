@@ -1,19 +1,20 @@
 import home from "./home";
 import about from "./about";
-import apply from "./apply";
 import idea from "./idea";
 import programStructure from "./programStructure";
-import cernAndBoston from "./cernAndBoston";
 import alumni from "./alumni";
-
+import solanLinjeforening from "../solanLinjeforening";
+import studentPage from "./studentPage";
+import alumniPage from "./alumniPage";
 const pages = [
   home,
   about,
-  apply,
   idea,
   programStructure,
-  cernAndBoston,
   alumni,
+  solanLinjeforening,
+  studentPage,
+  alumniPage,
 ];
 
 export default pages;

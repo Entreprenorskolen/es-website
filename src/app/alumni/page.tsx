@@ -1,20 +1,34 @@
-import { AlumniSection } from "@app/sections";
-import { client } from "@app/config";
-import { AlumniOrganizationPage } from "@app/types";
-import AlumniStudents from "./AlumniStudents";
-
-async function getData() {
-  const query = `*[ _type == "alumni" ]`;
-  return client.fetch<AlumniOrganizationPage[]>(query).then((res) => res[0]);
-}
+import AlumniStudents from "@app/sections/Alumni/AlumniStudents";
+import { AlumniHeader } from "@app/sections/Alumni/AlumniHeader";
+import { getAlumniPageData } from "./get_data";
+import AlumniStories from "@app/sections/Alumni/AlumniStories";
+import AlumniStartups from "@app/sections/Alumni/AlumniStartups";
 
 export default async function Alumni() {
-  const content = await getData();
+  const content = await getAlumniPageData();
+
+  if (!content) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center">
+        <h1 className="text-2xl">Could not load Alumni page content</h1>
+      </main>
+    );
+  }
 
   return (
     <main className="flex min-h-screen flex-col">
-      <AlumniStudents />
-      <AlumniSection image={content.image} blocks={content.content} />
+      <AlumniHeader
+        mainTitle={content.mainTitle}
+        titleText={content.titleText}
+      />
+      <AlumniStartups
+        startupTitle={content.startupTitle || "Alumni Startups"}
+      />
+      <AlumniStudents alumniTitle={content.alumniTitle} />
+      <AlumniStories
+        title={content.alumniStoryTitle}
+        stories={content.alumniStories}
+      />
     </main>
   );
 }

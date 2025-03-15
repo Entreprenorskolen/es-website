@@ -9,21 +9,159 @@ const programStructure = {
       type: "string",
     },
     {
-      name: "content",
-      title: "Content",
-      type: "array",
-      of: [{ type: "block" }],
+      name: "introTitle",
+      title: "Introduction Title",
+      type: "string",
     },
     {
-      name: "quote",
-      title: "Quote",
-      type: "quote",
+      name: "intro",
+      title: "Introduction",
+      type: "text",
     },
     {
-      name: "semesters",
-      title: "Semesters",
+      name: "sections",
+      title: "Sections",
       type: "array",
-      of: [{ type: "semester" }],
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+            {
+              name: "topic",
+              title: "Topic",
+              type: "string",
+            },
+            {
+              name: "text",
+              title: "Text",
+              type: "text",
+            },
+            {
+              name: "courses",
+              title: "Courses",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    {
+                      name: "courseCode",
+                      title: "Course Code",
+                      type: "string",
+                    },
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "credits",
+                      title: "Credits",
+                      type: "string",
+                    },
+                    {
+                      name: "url",
+                      title: "URL",
+                      type: "url",
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "bostonInfo",
+      title: "Boston Information",
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "topic",
+          title: "Topic",
+          type: "string",
+        },
+        {
+          name: "text",
+          title: "Text",
+          type: "text",
+        },
+        {
+          name: "url",
+          title: "URL",
+          type: "url",
+        },
+      ],
+    },
+    {
+      name: "cernInfo",
+      title: "CERN Information",
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "topic",
+          title: "Topic",
+          type: "string",
+        },
+        {
+          name: "text",
+          title: "Text",
+          type: "text",
+        },
+        {
+          name: "url",
+          title: "URL",
+          type: "url",
+        },
+      ],
+    },
+    {
+      name: "berlinInfo",
+      title: "Berlin Information",
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "topic",
+          title: "Topic",
+          type: "string",
+        },
+        {
+          name: "text",
+          title: "Text",
+          type: "text",
+        },
+        {
+          name: "url",
+          title: "URL",
+          type: "url",
+        },
+      ],
+    },
+    {
+      name: "readMoreLink",
+      title: "Read More Link",
+      type: "url",
     },
   ],
 };

@@ -9,8 +9,8 @@ const about = {
       type: "string",
     },
     {
-      name: "description",
-      title: "Description",
+      name: "titleText",
+      title: "Title Text",
       type: "text",
     },
     {
@@ -19,26 +19,14 @@ const about = {
       type: "image",
     },
     {
-      name: "quote",
-      title: "Quote",
-      type: "quote",
+      name: "aboutTitle",
+      title: "About Title",
+      type: "string",
     },
     {
-      name: "content_p1",
-      title: "Sections - Part 1",
-      type: "array",
-      of: [{ type: "block" }],
-    },
-    {
-      name: "video",
-      title: "Video URL",
-      type: "url",
-    },
-    {
-      name: "content_p2",
-      title: "Sections - Part 2",
-      type: "array",
-      of: [{ type: "block" }],
+      name: "aboutText",
+      title: "About Text",
+      type: "text",
     },
   ],
 };

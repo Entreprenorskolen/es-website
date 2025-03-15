@@ -1,94 +1,91 @@
-import { client } from "@app/config";
-import { ApplyPage } from "@app/types";
-import {
-  Button,
-  SanityBlock,
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@app/components";
-import { HeaderSectionApply, SocialSectionApply } from "@app/sections";
-import { IconExternalLink } from "@tabler/icons-react";
-import Link from "next/link";
+import { Intro } from "../../sections/Apply/Intro";
+import { Process } from "../../sections/Apply/Process";
+import { Content } from "../../sections/Apply/Content";
+import { Steps } from "../../sections/Apply/Steps";
+import { NavigationSidebar } from "@app/components/NavigationSidebar";
+import { FAQ } from "../../sections/Apply/FAQ";
+import { getData } from "./get_data";
+import { H1 } from "@app/components/Typography";
 
-async function getData() {
-  const query = `*[_type == 'apply']`;
-
-  return client.fetch<ApplyPage[]>(query).then((res) => res[0]);
-}
+const applySections = [
+  { id: "first-step", title: "Første steg" },
+  { id: "application-process", title: "Søknadsprosessen" },
+  { id: "application-content", title: "Søknadens innhold" },
+  { id: "how-to-apply", title: "Slik søker du" },
+  { id: "faq", title: "FAQ" },
+];
 
 export default async function Apply() {
   const content = await getData();
 
+  if (!content) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center">
+        <h1>No application data available</h1>
+      </main>
+    );
+  }
+
   return (
-    <main className="flex min-h-screen flex-col">
-      <HeaderSectionApply title={content.title} image={content.image} />
-      <section className="my-4 flex flex-col items-center md:hidden ">
-        <video controls className="w-4/5">
-          <source src={content.video_mobile} type="video/mp4" />
-        </video>
-      </section>
-      <section className="my-4 flex flex-col items-center">
-        <div className="w-4/5 md:w-3/5">
-          <SanityBlock blocks={content.content} />
+    <>
+      <div className="flex flex-col md:flex-row md:gap-8 px-4 sm:px-6 md:px-8 mt-12 md:mt-24">
+        <div className="w-64 hidden md:block mt-32">
+          <NavigationSidebar sections={applySections} />
         </div>
-      </section>
-      <section className="my-4 flex flex-col items-center">
-        <SocialSectionApply />
-      </section>
-      {content.information !== undefined && (
-        <section className="my-4 flex flex-col items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-10/12 md:w-3/5">
-            {content.information.map((info, index, array) => (
-              <Card
-                key={index}
-                className={`bg-accent text-accent-foreground relative ${array.length > 1 ? "" : "col-span-2"}`}
-                style={{
-                  paddingBottom: info.link ? "2rem" : 0,
-                }}
-              >
-                <CardHeader className="flex flex-row justify-between items-center">
-                  <CardTitle>{info.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-col">
-                    <div className="flex flex-row items-center">
-                      <p className="font-medium">Hvor:</p>
-                      <p className="ml-2">{info.location}</p>
-                    </div>
-                    <div className="flex flex-row items-center">
-                      <p className="font-medium">Når:</p>
-                      <p className="ml-2">
-                        {new Date(info.date).toLocaleDateString("no-NO", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                          hour: "numeric",
-                          minute: "numeric",
-                        })}
-                      </p>
-                    </div>
-                    <p className="mt-2 hidden md:block">{info.description}</p>
-                  </div>
-                </CardContent>
-                {info.link && (
-                  <Button
-                    variant="outline"
-                    className="absolute bottom-2 right-2"
-                    asChild
-                  >
-                    <Link href={info.link}>
-                      Gå til event
-                      <IconExternalLink size={18} className="ml-2" stroke={1} />
-                    </Link>
-                  </Button>
-                )}
-              </Card>
-            ))}
-          </div>
-        </section>
-      )}
-    </main>
+
+        <main className="flex-1 overflow-hidden">
+          <H1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 lg:mb-12 overflow-hidden">
+            {content.title}
+          </H1>
+
+          <section className="space-y-8 md:space-y-12">
+            {/* Intro Section */}
+            <div id="first-step">
+              <Intro
+                title={content.intro.title || ""}
+                content={content.intro.content || []}
+              />
+            </div>
+
+            {/* Process Section */}
+            {content.process && (
+              <div id="application-process">
+                <Process
+                  title={content.process.title || ""}
+                  timeline={content.process.timeline || []}
+                />
+              </div>
+            )}
+
+            {/* Content Section */}
+            {content.content && (
+              <div id="application-content">
+                <Content
+                  title={content.content.title || ""}
+                  introText={content.content.introText || []}
+                  informationBoxes={content.content.informationBoxes || []}
+                />
+              </div>
+            )}
+
+            {/* Steps Section */}
+            {content.steps && (
+              <div id="how-to-apply">
+                <Steps
+                  title={content.steps.title || ""}
+                  steps={content.steps.steps || []}
+                  outroText={content.steps.outroText || []}
+                />
+              </div>
+            )}
+
+            {/* FAQ Section */}
+            <section id="faq" className="my-8 md:my-12">
+              <FAQ faqs={content.FAQ || []} />
+            </section>
+          </section>
+        </main>
+      </div>
+    </>
   );
 }

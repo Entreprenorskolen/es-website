@@ -4,8 +4,11 @@ import "./globals.css";
 import { Montserrat as FontSans } from "next/font/google";
 
 import { cn } from "@app/lib";
-import { Footer, Header } from "@app/components";
+import { Container } from "@app/components";
+import { Navbar } from "@app/components/Navbar/Navbar";
+import { Footer } from "@app/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { ColorProvider } from "@app/context/ColorContext";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,18 +28,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Check if we're on the about page
+  const isAboutPage =
+    typeof window !== "undefined" && window.location.pathname === "/about";
+
   return (
-    <html lang="en">
+    <html lang="en" className="w-full">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased w-full max-w-full overflow-x-hidden",
           fontSans.variable,
         )}
       >
-        <Header />
-        {children}
-        <Analytics />
-        <Footer />
+        <ColorProvider>
+          <div className="flex flex-col min-h-screen w-full">
+            <Navbar />
+            <main className="flex-grow w-full">
+              {isAboutPage ? children : <Container>{children}</Container>}
+            </main>
+            <Footer />
+          </div>
+          <Analytics />
+        </ColorProvider>
       </body>
     </html>
   );

@@ -1,52 +1,72 @@
-"use client";
+"use client"; // ✅ Mark this as a Client Component
 
-import { useStudents } from "@app/hooks";
-import { Tabs, TabsList, TabsTrigger, Title } from "@app/components";
-import { CURRENT_YEARS } from "@app/constants";
-import { StudentDialog } from "@app/components/Dialogs/StudentDialog";
+import { useEffect, useState } from "react";
+import { StudentSection } from "@app/sections/Students/Students";
+import { SolanLinjeforening } from "@app/sections/Students/SolanLinjeforening";
+import { useSolanLinjeforening } from "@app/hooks/server/useSolanLinjeforening";
+import { getStudentPageData } from "./get_data";
+import { StudentHeader } from "@app/sections/Students/StudentHeader";
+import { StudentStartups } from "@app/sections/Students/StudentStartups";
+import { SolanLinjeforeningPage } from "@app/types";
+import { StudentStories } from "@app/sections/Students/StudentStories";
 
-import { useState } from "react";
+// Import the type we created in get_data.ts
+import type { StudentPageData } from "./get_data";
 
-export default function Students() {
-  const [currentYear, setCurrentYear] = useState("2026");
+function StudentDataFetcher() {
+  const [solanData, setSolanData] = useState<SolanLinjeforeningPage | null>(
+    null,
+  );
+  const [pageData, setPageData] = useState<StudentPageData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const solanDataPromise = useSolanLinjeforening();
 
-  const { students } = useStudents("current", currentYear);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [solanResult, studentPageData] = await Promise.all([
+          solanDataPromise,
+          getStudentPageData(),
+        ]);
+        setSolanData(solanResult.data);
+        setPageData(studentPageData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [solanDataPromise]);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
-    <main className="flex min-h-screen flex-col">
-      <section className="flex my-8 justify-center">
-        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center w-11/12">
-          <Title className="text-secondary">
-            Our Students{" "}
-            <span className="text-primary text-3xl">{currentYear}</span>
-          </Title>
-
-          <div className="mt-2 md:mt-0">
-            <div className="mt-2">
-              <Tabs
-                value={currentYear}
-                onValueChange={setCurrentYear}
-                className="mt-2 md:mt-0"
-              >
-                <TabsList>
-                  {CURRENT_YEARS.map((year) => (
-                    <TabsTrigger key={year} value={year}>
-                      {year}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </Tabs>
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <StudentHeader
+        mainTitle={pageData?.mainTitle || "Studentene"}
+        titleText={pageData?.titleText || ""}
+      />
+      <StudentStartups
+        startupTitle={pageData?.startupTitle || "Våre oppstarter"}
+      />
+      <StudentSection studentTitle={pageData?.studentTitle || "Studentene"} />
+      <StudentStories
+        title={pageData?.studentStoryTitle || "What our students say"}
+        stories={pageData?.studentStories || []}
+      />
       <section className="flex my-2 md:my-8 justify-center">
-        <div className="w-11/12 flex flex-wrap justify-center gap-6">
-          {students.map((student) => (
-            <StudentDialog student={student} key={student.name} />
-          ))}
-        </div>
+        {solanData && <SolanLinjeforening data={solanData} />}
       </section>
+    </>
+  );
+}
+
+export default function StudentsPage() {
+  return (
+    <main className="flex min-h-screen flex-col">
+      <StudentDataFetcher />
     </main>
   );
 }
