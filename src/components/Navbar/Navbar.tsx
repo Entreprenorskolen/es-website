@@ -12,6 +12,11 @@ const Navbar = () => {
   const { navbarColor } = useColors();
   const isDarkBg = navbarColor === "bg-[#0B3B8F]";
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState("NO");
+
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
+  };
 
   return (
     <div className={`${navbarColor} w-full py-2 md:py-4`}>
@@ -77,6 +82,17 @@ const Navbar = () => {
               Søk
             </Button>
           </Link>
+          {/* Language Dropdown */}
+          <div className="hidden md:flex items-center gap-2">
+            <select
+              value={language}
+              onChange={(e) => handleLanguageChange(e.target.value)}
+              className="bg-transparent text-sm lg:text-base hover:text-orange-500 transition-colors"
+            >
+              <option value="NO">NO</option>
+              <option value="EN">EN</option>
+            </select>
+          </div>
         </nav>
       </header>
 
@@ -109,6 +125,17 @@ const Navbar = () => {
                 Søk
               </Button>
             </Link>
+            {/* Mobile Language Dropdown */}
+            <div className="flex items-center gap-2 mt-4">
+              <select
+                value={language}
+                onChange={(e) => handleLanguageChange(e.target.value)}
+                className="bg-transparent text-sm hover:text-orange-500 transition-colors"
+              >
+                <option value="NO">NO</option>
+                <option value="EN">EN</option>
+              </select>
+            </div>
           </div>
         </div>
       )}
