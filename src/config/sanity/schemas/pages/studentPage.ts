@@ -4,6 +4,12 @@ const studentPage = {
   type: "document",
   fields: [
     {
+      name: "isEnglish",
+      title: "Is English",
+      type: "boolean",
+      description: "Tell the website to load this document if the user has English as their language.",
+    },
+    {
       name: "mainTitle",
       title: "Main Title",
       type: "string",
