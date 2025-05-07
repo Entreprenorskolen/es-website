@@ -15,7 +15,6 @@ const Footer = () => {
     { label: "Alumni", href: "/alumni" },
     { label: "Studieprogram", href: "/program" },
     { label: "Om oss", href: "/about" },
-    { label: "Kontakt", href: "/contact" },
     { label: "Søk", href: "/sok", isButton: true },
   ];
 
