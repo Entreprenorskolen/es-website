@@ -75,8 +75,13 @@ interface ContactSection {
 }
 
 interface HomeSection {
-  title: string;
-  description: string;
+  sectionTitle?: string;
+  sectionSubtitle?: string;
+  items?: {
+    _key?: string;
+    title?: string;
+    description?: string;
+  }[];
 }
 
 /** ✅ Updated HomePage Type to Match `home.ts` Schema */
