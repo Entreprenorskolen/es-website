@@ -51,18 +51,37 @@ const home = {
     {
       name: "sections",
       title: "Sections",
-      type: "array",
-      of: [
+      type: "object",
+      fields: [
         {
-          type: "object",
-          name: "section",
-          title: "Section",
-          fields: [
-            { name: "title", title: "Title", type: "string" },
-            { name: "description", title: "Description", type: "text" },
-          ],
+          name: "sectionTitle",
+          title: "Section Title",
+          type: "string",
+          description: "The main title for the entire section"
         },
-      ],
+        {
+          name: "sectionSubtitle",
+          title: "Section Subtitle",
+          type: "string",
+          description: "The subtitle for the entire section"
+        },
+        {
+          name: "items",
+          title: "Section Items",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "item",
+              title: "Item",
+              fields: [
+                { name: "title", title: "Title", type: "string" },
+                { name: "description", title: "Description", type: "text" },
+              ],
+            },
+          ],
+        }
+      ]
     },
     {
       name: "successStories",

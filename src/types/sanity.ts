@@ -75,8 +75,13 @@ interface ContactSection {
 }
 
 interface HomeSection {
-  title: string;
-  description: string;
+  sectionTitle?: string;
+  sectionSubtitle?: string;
+  items?: {
+    _key?: string;
+    title?: string;
+    description?: string;
+  }[];
 }
 
 /** ✅ Updated HomePage Type to Match `home.ts` Schema */
@@ -86,7 +91,7 @@ export interface HomePage extends SanityMeta {
   image: Image;
   cta: CallToAction;
   partners: PartnerLogo[];
-  sections: HomeSection[];
+  sections?: HomeSection;
   successStories: SuccessStory[];
   news: NewsItem[];
   statistics: Statistic[];
@@ -99,6 +104,7 @@ export interface AboutPage extends SanityMeta {
   image: Image;
   aboutTitle: string;
   aboutText: string;
+  isEnglish?: boolean;
 }
 
 export interface SortableItem extends SanityMeta {

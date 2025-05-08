@@ -6,16 +6,19 @@ import { Button } from "@app/components";
 import Link from "next/link";
 import { paths } from "@app/constants/page_links";
 import { useColors } from "@app/context/ColorContext";
+import { useLanguage } from "@app/context/LanguageContext";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const { navbarColor } = useColors();
   const isDarkBg = navbarColor === "bg-[#0B3B8F]";
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState("NO");
+  const { language, setLanguage } = useLanguage();
 
-  const handleLanguageChange = (lang: string) => {
-    setLanguage(lang);
+  const handleLanguageChange = (langString: string) => {
+    if (langString === "NO" || langString === "EN") {
+      setLanguage(langString);
+    }
   };
 
   return (

@@ -9,6 +9,7 @@ import { Navbar } from "@app/components/Navbar/Navbar";
 import { Footer } from "@app/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { ColorProvider } from "@app/context/ColorContext";
+import { LanguageProvider } from "@app/context/LanguageContext";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -41,14 +42,16 @@ export default function RootLayout({
         )}
       >
         <ColorProvider>
-          <div className="flex flex-col min-h-screen w-full">
-            <Navbar />
-            <main className="flex-grow w-full">
-              {isAboutPage ? children : <Container>{children}</Container>}
-            </main>
-            <Footer />
-          </div>
-          <Analytics />
+          <LanguageProvider>
+            <div className="flex flex-col min-h-screen w-full">
+              <Navbar />
+              <main className="flex-grow w-full">
+                {isAboutPage ? children : <Container>{children}</Container>}
+              </main>
+              <Footer />
+            </div>
+            <Analytics />
+          </LanguageProvider>
         </ColorProvider>
       </body>
     </html>
