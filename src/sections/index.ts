@@ -3,7 +3,7 @@ export * from "./Home/HeaderSection";
 export * from "./Home/LogoSection";
 export * from "./Home/InformationSection";
 export * from "./Home/SuccessStoriesSection";
-export * from "./Home/NewsSection";
+
 export * from "./Home/StatisticsSections";
 export * from "./Home/IdeaSection";
 export * from "./Apply/Intro";
