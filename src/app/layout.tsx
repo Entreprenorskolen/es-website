@@ -5,8 +5,8 @@ import { Montserrat as FontSans } from "next/font/google";
 
 import { cn } from "@app/lib";
 import { Container } from "@app/components";
-import { Navbar } from "@app/components/Navbar/Navbar";
-import { Footer } from "@app/components/Footer";
+import { NavbarWrapper } from "@app/components/Navbar";
+import { FooterWrapper } from "@app/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { ColorProvider } from "@app/context/ColorContext";
 
@@ -42,11 +42,11 @@ export default function RootLayout({
       >
         <ColorProvider>
           <div className="flex flex-col min-h-screen w-full">
-            <Navbar />
+            <NavbarWrapper />
             <main className="flex-grow w-full">
               {isAboutPage ? children : <Container>{children}</Container>}
             </main>
-            <Footer />
+            <FooterWrapper />
           </div>
           <Analytics />
         </ColorProvider>

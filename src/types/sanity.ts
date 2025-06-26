@@ -255,3 +255,27 @@ export interface SolanLinjeforeningPage extends SanityMeta {
   videoTitle: string;
   video: string;
 }
+
+export interface NavbarData extends SanityMeta {
+  homeText: string;
+  studentsText: string;
+  alumniText: string;
+  programText: string;
+  aboutText: string;
+  applyText: string;
+}
+
+export interface FooterData extends SanityMeta {
+  homeText: string;
+  studentsText: string;
+  alumniText: string;
+  programText: string;
+  aboutText: string;
+  applyText: string;
+  contactTitle: string;
+  phoneNumber: string;
+  email: string;
+  addressTitle: string;
+  streetAddress: string;
+  cityPostalCode: string;
+}

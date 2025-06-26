@@ -4,18 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";
 import { useColors } from "@app/context/ColorContext";
+import { FooterData } from "@app/types/sanity";
 
-const Footer = () => {
+interface FooterProps {
+  footerData?: FooterData | null;
+}
+
+const Footer = ({ footerData }: FooterProps) => {
   const { footerColor } = useColors();
   console.log("Footer color:", footerColor);
 
+  // Navigation links with fallback text
   const links = [
-    { label: "Hjem", href: "/" },
-    { label: "Studenter", href: "/students" },
-    { label: "Alumni", href: "/alumni" },
-    { label: "Studieprogram", href: "/program" },
-    { label: "Om oss", href: "/about" },
-    { label: "Søk", href: "/sok", isButton: true },
+    { label: footerData?.homeText || "Hjem", href: "/" },
+    { label: footerData?.studentsText || "Studenter", href: "/students" },
+    { label: footerData?.alumniText || "Alumni", href: "/alumni" },
+    { label: footerData?.programText || "Studieprogram", href: "/program" },
+    { label: footerData?.aboutText || "Om oss", href: "/about" },
+    { label: footerData?.applyText || "Søk", href: "/sok", isButton: true },
   ];
 
   const FacebookIcon = ({ width = 24, height = 24, className = "" }) => (
@@ -39,18 +45,6 @@ const Footer = () => {
       className={className}
     >
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-
-  const YoutubeIcon = ({ width = 24, height = 24, className = "" }) => (
-    <svg
-      width={width}
-      height={height}
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      className={className}
-    >
-      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
     </svg>
   );
 
@@ -100,38 +94,40 @@ const Footer = () => {
             {/* Contact */}
             <div className="space-y-1 sm:space-y-2">
               <h3 className="font-semibold text-sm sm:text-base mb-2">
-                Kontakt
+                {footerData?.contactTitle || "Kontakt"}
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">
-                +47 73 59 36 09
+                {footerData?.phoneNumber || "+47 73 59 36 09"}
               </p>
               <Link
-                href="mailto:es.rekruttering@iot.ntnu.no"
+                href={`mailto:${footerData?.email || "es.rekruttering@iot.ntnu.no"}`}
                 className="text-gray-600 hover:text-gray-900 text-sm sm:text-base inline-block"
               >
-                es.rekruttering@iot.ntnu.no →
+                {footerData?.email || "es.rekruttering@iot.ntnu.no"} →
               </Link>
             </div>
 
             {/* Address */}
             <div className="space-y-1 sm:space-y-2">
               <h3 className="font-semibold text-sm sm:text-base mb-2">
-                Adresse
+                {footerData?.addressTitle || "Adresse"}
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">
-                Sem Sælands Vei 1
+                {footerData?.streetAddress || "Sem Sælands Vei 1"}
               </p>
               <p className="text-gray-600 text-sm sm:text-base">
-                7034, Trondheim
+                {footerData?.cityPostalCode || "7034, Trondheim"}
               </p>
             </div>
 
             {/* Socials */}
             <div className="flex justify-center md:justify-end space-x-4 sm:space-x-6">
               <Link
-                href="#"
+                href="https://www.facebook.com/NTNUsEntreprenorskole"
                 className="text-[#FF5F15] hover:text-orange-600"
                 aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FacebookIcon
                   width={24}
@@ -140,7 +136,9 @@ const Footer = () => {
                 />
               </Link>
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/ntnuse/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#FF5F15] hover:text-orange-600"
                 aria-label="LinkedIn"
               >
@@ -149,13 +147,6 @@ const Footer = () => {
                   height={24}
                   className="sm:w-7 sm:h-7"
                 />
-              </Link>
-              <Link
-                href="#"
-                className="text-[#FF5F15] hover:text-orange-600"
-                aria-label="YouTube"
-              >
-                <YoutubeIcon width={24} height={24} className="sm:w-7 sm:h-7" />
               </Link>
             </div>
           </div>

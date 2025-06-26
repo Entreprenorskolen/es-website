@@ -4,14 +4,29 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@app/components";
 import Link from "next/link";
-import { paths } from "@app/constants/page_links";
 import { useColors } from "@app/context/ColorContext";
 import { Menu, X } from "lucide-react";
+import { NavbarData } from "@app/types/sanity";
 
-const Navbar = () => {
+interface NavbarProps {
+  navbarData?: NavbarData | null;
+}
+
+const Navbar = ({ navbarData }: NavbarProps) => {
   const { navbarColor } = useColors();
   const isDarkBg = navbarColor === "bg-[#0B3B8F]";
   const [isOpen, setIsOpen] = useState(false);
+
+  // Navigation links with fallback text
+  const navigationLinks = [
+    { path: "/", text: navbarData?.homeText || "Hjem" },
+    { path: "/students", text: navbarData?.studentsText || "Students" },
+    { path: "/alumni", text: navbarData?.alumniText || "Alumni" },
+    { path: "/program", text: navbarData?.programText || "Program" },
+    { path: "/about", text: navbarData?.aboutText || "About" },
+  ];
+
+  const applyText = navbarData?.applyText || "Søk";
 
   return (
     <div className={`${navbarColor} w-full py-2 md:py-4`}>
@@ -51,21 +66,17 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-4 lg:gap-8">
-          {paths
-            .filter((path) => path !== "/sok")
-            .map((path) => (
-              <Link
-                key={path}
-                href={path}
-                className={`text-sm lg:text-base hover:text-orange-500 transition-colors ${
-                  isDarkBg ? "text-white" : "text-black"
-                }`}
-              >
-                {path === "/"
-                  ? "Hjem"
-                  : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
-              </Link>
-            ))}
+          {navigationLinks.map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+              className={`text-sm lg:text-base hover:text-orange-500 transition-colors ${
+                isDarkBg ? "text-white" : "text-black"
+              }`}
+            >
+              {link.text}
+            </Link>
+          ))}
           <Link href="/sok">
             <Button
               className="px-4 sm:px-6 lg:px-8 py-2"
@@ -74,7 +85,7 @@ const Navbar = () => {
                 color: "#ffffff",
               }}
             >
-              Søk
+              {applyText}
             </Button>
           </Link>
         </nav>
@@ -84,20 +95,16 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4">
           <div className="flex flex-col space-y-3 bg-white rounded-lg p-4 shadow-lg">
-            {paths
-              .filter((path) => path !== "/sok")
-              .map((path) => (
-                <Link
-                  key={path}
-                  href={path}
-                  className="text-gray-700 hover:text-orange-500 py-2 text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {path === "/"
-                    ? "Hjem"
-                    : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
-                </Link>
-              ))}
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className="text-gray-700 hover:text-orange-500 py-2 text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.text}
+              </Link>
+            ))}
             <Link href="/sok" onClick={() => setIsOpen(false)}>
               <Button
                 className="w-full py-2 text-sm"
@@ -106,7 +113,7 @@ const Navbar = () => {
                   color: "#ffffff",
                 }}
               >
-                Søk
+                {applyText}
               </Button>
             </Link>
           </div>
