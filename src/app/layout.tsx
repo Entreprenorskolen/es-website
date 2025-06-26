@@ -33,7 +33,7 @@ export default function RootLayout({
     typeof window !== "undefined" && window.location.pathname === "/about";
 
   return (
-    <html lang="en" className="w-full">
+    <html lang="no" className="w-full">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased w-full max-w-full overflow-x-hidden",

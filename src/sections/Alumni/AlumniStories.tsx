@@ -17,6 +17,9 @@ export function AlumniStories({ title, stories }: AlumniStoriesProps) {
   const [currentPage, setCurrentPage] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [totalPages, setTotalPages] = useState(0);
+  const [expandedStories, setExpandedStories] = useState<Set<number>>(
+    new Set(),
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -36,6 +39,18 @@ export function AlumniStories({ title, stories }: AlumniStoriesProps) {
 
   const handleNext = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const toggleExpanded = (globalIndex: number) => {
+    setExpandedStories((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(globalIndex)) {
+        newSet.delete(globalIndex);
+      } else {
+        newSet.add(globalIndex);
+      }
+      return newSet;
+    });
   };
 
   if (!stories?.length) return null;
@@ -79,32 +94,61 @@ export function AlumniStories({ title, stories }: AlumniStoriesProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {currentStories.map((story, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md p-6 md:p-8"
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-                  <div className="relative w-16 h-16 md:w-24 md:h-24 flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
-                    <Image
-                      src={urlForImage(story.image)}
-                      alt={story.name}
-                      fill
-                      className="object-cover rounded-full"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="mb-4 text-center md:text-left">
-                      <h3 className="text-xl font-semibold">{story.name}</h3>
-                      <p className="text-gray-600">{story.roleInStartup}</p>
+            {currentStories.map((story, index) => {
+              const globalIndex = currentPage * storiesPerPage + index;
+              const isExpanded = expandedStories.has(globalIndex);
+
+              return (
+                <div
+                  key={globalIndex}
+                  className="bg-white rounded-lg shadow-md p-6 md:p-8"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
+                    <div className="relative w-16 h-16 md:w-24 md:h-24 flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
+                      <Image
+                        src={urlForImage(story.image)}
+                        alt={story.name}
+                        fill
+                        className="object-cover rounded-full"
+                      />
                     </div>
-                    <p className="text-gray-700 leading-relaxed">
-                      {story.text}
-                    </p>
+                    <div className="flex-1">
+                      <div className="mb-4 text-center md:text-left">
+                        <h3 className="text-xl font-semibold">{story.name}</h3>
+                        <p className="text-gray-600">{story.roleInStartup}</p>
+                      </div>
+                      <div className="relative">
+                        <p
+                          className={`text-gray-700 leading-relaxed transition-all duration-300 ${
+                            isExpanded ? "" : "line-clamp-4 overflow-hidden"
+                          }`}
+                          style={
+                            !isExpanded
+                              ? {
+                                  maxHeight: "6rem",
+                                  WebkitLineClamp: 4,
+                                  WebkitBoxOrient: "vertical",
+                                  display: "-webkit-box",
+                                }
+                              : {}
+                          }
+                        >
+                          {story.text}
+                        </p>
+                        {story.text.length > 200 && (
+                          <button
+                            onClick={() => toggleExpanded(globalIndex)}
+                            className="mt-2 text-blue-600 hover:text-blue-800 font-medium text-sm transition-colors"
+                          >
+                            {isExpanded ? "Les mindre" : "Les mer"}
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="flex justify-center gap-2 mt-8">

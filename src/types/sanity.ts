@@ -91,7 +91,7 @@ export interface HomePage extends SanityMeta {
   image: Image;
   cta: CallToAction;
   partners: PartnerLogo[];
-  sections: HomeSection[];
+  sections: HomeSection;
   successStories: SuccessStory[];
   news: NewsItem[];
   statistics: Statistic[];
