@@ -15,7 +15,7 @@ export async function getAlumniPageData() {
     const result = await client.fetch<AlumniPage>(
       query,
       {},
-      { cache: "no-store" },
+      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
     );
     return result;
   } catch (error) {

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { useStartups } from "@app/hooks/server/useStartups";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";
@@ -13,9 +15,23 @@ interface StudentStartupsProps {
 }
 
 export function StudentStartups({ startupTitle }: StudentStartupsProps) {
-  const { startups } = useStartups("inhouse");
+  const { startups, isLoading } = useStartups("inhouse");
   const [currentPage, setCurrentPage] = useState(0);
   const [expandedStartups, setExpandedStartups] = useState<string[]>([]);
+
+  if (isLoading) {
+    return (
+      <FullWidthContainer bgColor="bg-[#FDF8F4]">
+        <div className="w-full py-12 px-4 mt-24 mb-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex justify-center items-center h-40">
+              <div className="text-gray-500">Loading startups...</div>
+            </div>
+          </div>
+        </div>
+      </FullWidthContainer>
+    );
+  }
 
   if (!startups.length) {
     return null;

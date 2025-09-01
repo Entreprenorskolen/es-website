@@ -14,7 +14,7 @@ export async function useSolanLinjeforening() {
     const data = await client.fetch<SolanLinjeforeningPage>(
       query,
       {},
-      { cache: "no-store" },
+      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
     );
     return { data };
   } catch (error) {

@@ -14,7 +14,7 @@ export async function getAboutData() {
     const result = await client.fetch<AboutPage>(
       query,
       {},
-      { cache: "no-store" },
+      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
     );
     return result;
   } catch (error) {
@@ -35,7 +35,7 @@ export async function getFacultyMembers() {
     const result = await client.fetch<FacultyMember[]>(
       query,
       {},
-      { cache: "no-store" },
+      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
     );
     return result;
   } catch (error) {

@@ -42,7 +42,7 @@ export async function getData() {
     const result = await client.fetch<ProgramStructurePage>(
       query,
       {},
-      { cache: "no-store" },
+      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
     );
     return result;
   } catch (error) {

@@ -1,3 +1,5 @@
+"use client";
+
 import { H2 } from "@app/components";
 import { StudentPageData } from "@app/app/students/get_data";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";

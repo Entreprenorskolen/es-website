@@ -17,7 +17,7 @@ export default async function Home() {
     const result = await client.fetch<HomePage[]>(
       query,
       {},
-      { cache: "no-store" },
+      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
     );
 
     if (result && result.length > 0) {

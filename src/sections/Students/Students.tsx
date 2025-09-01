@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export function StudentSection({ studentTitle }: { studentTitle: string }) {
   const [currentYear, setCurrentYear] = useState("2026");
-  const { students } = useStudents("current", currentYear);
+  const { students, isLoading } = useStudents("current", currentYear);
 
   return (
     <div className="mb-24">
@@ -44,14 +44,20 @@ export function StudentSection({ studentTitle }: { studentTitle: string }) {
       </section>
       <section className="flex my-2 md:my-8 justify-center">
         <div className="w-11/12 grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-3 md:gap-6">
-          {students.map((student) => (
-            <div key={student.name} className="flex justify-center">
-              <StudentDialog
-                student={student}
-                className="w-full max-w-[150px] md:max-w-none"
-              />
+          {isLoading ? (
+            <div className="col-span-2 md:col-span-full flex justify-center items-center h-40">
+              <div className="text-gray-500">Loading students...</div>
             </div>
-          ))}
+          ) : (
+            students.map((student) => (
+              <div key={student.name} className="flex justify-center">
+                <StudentDialog
+                  student={student}
+                  className="w-full max-w-[150px] md:max-w-none"
+                />
+              </div>
+            ))
+          )}
         </div>
       </section>
     </div>
