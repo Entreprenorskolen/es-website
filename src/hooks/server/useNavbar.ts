@@ -17,9 +17,13 @@ export async function getNavbarData(): Promise<NavbarData | null> {
       applyText
     }`;
 
-    const data = await client.fetch(query, {}, {
-      next: { revalidate: 86400 } // ✅ Cache for 24 hours
-    });
+    const data = await client.fetch(
+      query,
+      {},
+      {
+        next: { revalidate: 86400 }, // ✅ Cache for 24 hours
+      },
+    );
     return data;
   } catch (error) {
     console.error("Error fetching navbar data:", error);

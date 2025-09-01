@@ -19,7 +19,7 @@ const useStartups = (currentValue: string) => {
     const now = Date.now();
 
     // Return cached data if it's still valid
-    if (cached && (now - cached.timestamp) < CACHE_DURATION) {
+    if (cached && now - cached.timestamp < CACHE_DURATION) {
       setStartups(cached.data);
       setIsLoading(false);
       return;
@@ -53,14 +53,14 @@ const useStartups = (currentValue: string) => {
       const params = { isInHouse };
       const data = await client.fetch<Startup[]>(query, params, {
         signal: abortControllerRef.current.signal,
-        next: { revalidate: 1800 } // ✅ Cache for 30 minutes
+        next: { revalidate: 1800 }, // ✅ Cache for 30 minutes
       });
-      
+
       // Cache the result
       startupsCache.set(cacheKey, { data, timestamp: now });
       setStartups(data);
     } catch (error) {
-      if (error instanceof Error && error.name !== 'AbortError') {
+      if (error instanceof Error && error.name !== "AbortError") {
         console.error("Error fetching startups:", error);
       }
     } finally {

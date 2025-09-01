@@ -23,9 +23,13 @@ export async function getFooterData(): Promise<FooterData | null> {
       cityPostalCode
     }`;
 
-    const data = await client.fetch(query, {}, {
-      next: { revalidate: 86400 } // ✅ Cache for 24 hours
-    });
+    const data = await client.fetch(
+      query,
+      {},
+      {
+        next: { revalidate: 86400 }, // ✅ Cache for 24 hours
+      },
+    );
     return data;
   } catch (error) {
     console.error("Error fetching footer data:", error);

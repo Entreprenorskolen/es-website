@@ -17,12 +17,12 @@ const useStudents = (
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const fetchStudents = async (isCurrent: boolean, year: string) => {
-    const cacheKey = `${isCurrent ? 'current' : 'alumni'}_${year}`;
+    const cacheKey = `${isCurrent ? "current" : "alumni"}_${year}`;
     const cached = studentsCache.get(cacheKey);
     const now = Date.now();
 
     // Return cached data if it's still valid
-    if (cached && (now - cached.timestamp) < CACHE_DURATION) {
+    if (cached && now - cached.timestamp < CACHE_DURATION) {
       setStudents(cached.data);
       setIsLoading(false);
       return;
@@ -55,14 +55,14 @@ const useStudents = (
       const params = { year: Number(year) };
       const data = await client.fetch<Student[]>(query, params, {
         signal: abortControllerRef.current.signal,
-        next: { revalidate: 1800 } // ✅ Cache for 30 minutes
+        next: { revalidate: 1800 }, // ✅ Cache for 30 minutes
       });
-      
+
       // Cache the result
       studentsCache.set(cacheKey, { data, timestamp: now });
       setStudents(data);
     } catch (error) {
-      if (error instanceof Error && error.name !== 'AbortError') {
+      if (error instanceof Error && error.name !== "AbortError") {
         console.error("Error fetching students:", error);
       }
     } finally {
