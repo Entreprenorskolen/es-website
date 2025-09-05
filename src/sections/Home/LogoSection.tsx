@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 import { useStartups } from "@app/hooks";
 
 const LogoSection = () => {
@@ -54,7 +54,7 @@ const LogoSection = () => {
             {allStartups.map((startup, index) => (
               <div key={`logo1-${index}`} className="w-[80px] flex-shrink-0">
                 <Image
-                  src={urlForImage(startup.logo)}
+                  src={getImageUrl(startup.logo)}
                   alt={startup.name}
                   width={80}
                   height={32}
@@ -68,7 +68,7 @@ const LogoSection = () => {
             {allStartups.map((startup, index) => (
               <div key={`logo2-${index}`} className="w-[80px] flex-shrink-0">
                 <Image
-                  src={urlForImage(startup.logo)}
+                  src={getImageUrl(startup.logo)}
                   alt={startup.name}
                   width={80}
                   height={32}

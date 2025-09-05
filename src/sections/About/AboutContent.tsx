@@ -1,7 +1,7 @@
 import { AboutPage } from "@app/types";
 import { H1, P } from "@app/components";
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 
 interface AboutContentProps {
   about: AboutPage;
@@ -25,7 +25,7 @@ export const AboutContent = ({ about }: AboutContentProps) => {
         {about.image && (
           <div className="w-full mb-12">
             <Image
-              src={urlForImage(about.image)}
+              src={getImageUrl(about.image)}
               alt="About NTNU School of Entrepreneurship"
               width={800}
               height={400}

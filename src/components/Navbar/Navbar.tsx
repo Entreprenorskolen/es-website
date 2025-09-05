@@ -6,7 +6,7 @@ import { Button } from "@app/components";
 import Link from "next/link";
 import { useColors } from "@app/context/ColorContext";
 import { Menu, X } from "lucide-react";
-import { NavbarData } from "@app/types/sanity";
+import { NavbarData } from "@app/types/data";
 
 interface NavbarProps {
   navbarData?: NavbarData | null;

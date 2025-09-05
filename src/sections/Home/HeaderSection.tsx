@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 import { Button, Title, P } from "@app/components";
 import Link from "next/link";
 import { HomePage } from "@app/types";
@@ -29,7 +29,7 @@ const HeaderSection = ({
         {/* ✅ Hero Image - Moved to top for mobile */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 md:order-2 md:ml-12">
           <Image
-            src={urlForImage(image)}
+            src={getImageUrl(image)}
             alt="Hero Image"
             width={500}
             height={400}

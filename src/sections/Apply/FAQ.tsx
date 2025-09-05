@@ -1,4 +1,4 @@
-import { SanityBlock, H3 } from "@app/components";
+import { BlockRenderer, H3 } from "@app/components";
 import {
   Accordion,
   AccordionContent,
@@ -30,7 +30,7 @@ export function FAQ({ faqs }: FAQSectionProps) {
               {faq.title}
             </AccordionTrigger>
             <AccordionContent>
-              <SanityBlock blocks={faq.content} />
+              <BlockRenderer blocks={faq.content} />
             </AccordionContent>
           </AccordionItem>
         ))}

@@ -3,7 +3,7 @@
 import { H2 } from "@app/components";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AlumniPage } from "@app/types";
@@ -106,7 +106,7 @@ export function AlumniStories({ title, stories }: AlumniStoriesProps) {
                   <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
                     <div className="relative w-16 h-16 md:w-24 md:h-24 flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
                       <Image
-                        src={urlForImage(story.image)}
+                        src={getImageUrl(story.image)}
                         alt={story.name}
                         fill
                         className="object-cover rounded-full"

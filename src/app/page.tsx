@@ -1,4 +1,3 @@
-import { client } from "@app/config";
 import { HomePage } from "@app/types";
 import {
   HeaderSection,
@@ -8,24 +7,32 @@ import {
   StatisticsSection,
   IdeaSection,
 } from "@app/sections";
+import { HOME_PAGE_DATA } from "@app/text/home";
 
 export default async function Home() {
-  let content: HomePage | null = null;
+  // Use hardcoded data instead of Sanity
+  // For now, we'll use the Norwegian version (index 0)
+  // Later this can be made dynamic based on language preference
+  const homeData = HOME_PAGE_DATA[0];
 
-  try {
-    const query = `*[_type == "home"]`;
-    const result = await client.fetch<HomePage[]>(
-      query,
-      {},
-      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
-    );
-
-    if (result && result.length > 0) {
-      content = result[0];
-    }
-  } catch (error) {
-    console.error("Sanity fetch error:", error);
-  }
+  // Transform hardcoded data to match HomePage interface
+  const content: HomePage = {
+    _type: "home",
+    _id: "hardcoded-home",
+    _rev: "1",
+    _createdAt: new Date(),
+    _updatedAt: new Date(),
+    title: homeData.title,
+    description: homeData.description,
+    image: homeData.image,
+    cta: homeData.cta,
+    partners: homeData.partners || [],
+    sections: homeData.sections,
+    successStories: homeData.successStories || [],
+    news: homeData.news || [],
+    statistics: homeData.statistics || [],
+    contact: homeData.contact,
+  };
 
   // ✅ Show a fallback UI if content is missing
   if (!content) {

@@ -4,7 +4,7 @@ import { H2 } from "@app/components";
 import { StudentPageData } from "@app/app/students/get_data";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -22,13 +22,20 @@ export function StudentStories({ title, stories }: StudentStoriesProps) {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      setTotalPages(Math.ceil(stories.length / (mobile ? 1 : 2)));
+      const storiesPerPage = mobile ? 1 : 2;
+      const calculatedTotalPages = Math.ceil(stories.length / storiesPerPage);
+      setTotalPages(calculatedTotalPages);
+
+      // Reset to first page if current page is beyond the new total pages
+      if (currentPage >= calculatedTotalPages) {
+        setCurrentPage(0);
+      }
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [stories.length]);
+  }, [stories.length, currentPage]);
 
   const handlePrev = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
@@ -81,13 +88,13 @@ export function StudentStories({ title, stories }: StudentStoriesProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {currentStories.map((story, index) => (
               <div
-                key={index}
+                key={story._key || index}
                 className="bg-white rounded-lg shadow-md p-6 md:p-8"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:gap-8">
                   <div className="relative w-16 h-16 md:w-24 md:h-24 flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0">
                     <Image
-                      src={urlForImage(story.image)}
+                      src={getImageUrl(story.image)}
                       alt={story.name}
                       fill
                       className="object-cover rounded-full"

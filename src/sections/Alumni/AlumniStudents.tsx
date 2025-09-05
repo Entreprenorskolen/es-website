@@ -17,9 +17,16 @@ export default function AlumniStudents({
   alumniTitle: string;
 }) {
   const { currentValue: currentYear, onChange: onYearChange } =
-    useSelect("2024");
+    useSelect("2023");
 
-  const { students } = useStudents("alumni", currentYear);
+  const { students, isLoading } = useStudents("alumni", currentYear);
+
+  // Debug logging
+  console.log("AlumniStudents - currentYear:", currentYear);
+  console.log("AlumniStudents - students count:", students?.length);
+  console.log("AlumniStudents - isLoading:", isLoading);
+  console.log("AlumniStudents - students:", students);
+
   return (
     <>
       <section className="flex my-8 justify-center">
@@ -52,15 +59,27 @@ export default function AlumniStudents({
       </section>
       <section className="flex my-2 md:my-8 justify-center">
         <div className="w-11/12 grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-3 md:gap-6 mb-16">
-          {students.map((student) => (
-            <div key={student.name} className="flex justify-center">
-              <StudentDialog
-                student={student}
-                key={student.name}
-                className="w-full max-w-[150px] md:max-w-none"
-              />
+          {isLoading ? (
+            <div className="col-span-2 md:col-span-full flex justify-center items-center h-40">
+              <div className="text-gray-500">Loading alumni...</div>
             </div>
-          ))}
+          ) : students.length === 0 ? (
+            <div className="col-span-2 md:col-span-full flex justify-center items-center h-40">
+              <div className="text-gray-500">
+                No alumni found for {currentYear}
+              </div>
+            </div>
+          ) : (
+            students.map((student) => (
+              <div key={student.name} className="flex justify-center">
+                <StudentDialog
+                  student={student}
+                  key={student.name}
+                  className="w-full max-w-[150px] md:max-w-none"
+                />
+              </div>
+            ))
+          )}
         </div>
       </section>
     </>

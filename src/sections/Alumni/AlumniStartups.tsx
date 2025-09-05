@@ -5,9 +5,7 @@ import { useStartups } from "@app/hooks/server/useStartups";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";
 import Image from "next/image";
 import { ChevronRight, ChevronLeft, ExternalLink } from "lucide-react";
-import { urlForImage } from "@app/config";
-import { PortableText } from "@portabletext/react";
-import { TypedObject } from "@portabletext/types";
+import { getImageUrl } from "@app/lib/image-utils";
 import { PRIMARY_ORANGE } from "@app/constants";
 
 interface AlumniStartupsProps {
@@ -107,7 +105,7 @@ export function AlumniStartups({ startupTitle }: AlumniStartupsProps) {
                   >
                     <div className="h-28 sm:h-32 md:h-40 relative mb-3 sm:mb-4">
                       <Image
-                        src={urlForImage(startup.logo)}
+                        src={getImageUrl(startup.logo)}
                         alt={`${startup.name} logo`}
                         fill
                         className="object-contain"
@@ -136,9 +134,17 @@ export function AlumniStartups({ startupTitle }: AlumniStartupsProps) {
                       className={`text-gray-600 text-xs sm:text-sm ${!isExpanded ? "line-clamp-3" : ""} mb-4 sm:mb-6`}
                     >
                       {startup.description && (
-                        <PortableText
-                          value={startup.description as TypedObject[]}
-                        />
+                        <>
+                          <div>
+                            {startup.description.map(
+                              (block: any, index: number) => (
+                                <p key={index}>
+                                  {block.children?.[0]?.text || "No text"}
+                                </p>
+                              ),
+                            )}
+                          </div>
+                        </>
                       )}
                     </div>
                     <div className="mt-2">

@@ -6,8 +6,8 @@ import {
   DialogTrigger,
 } from "./Dialog";
 import Image from "next/image";
-import { urlForImage } from "@app/config/sanity/lib/image";
-import { Button, H6, SanityBlock } from "@app/components";
+import { getImageUrl } from "@app/lib/image-utils";
+import { Button, H6, BlockRenderer } from "@app/components";
 import { Startup } from "@app/types";
 import { Avatar, AvatarImage } from "@app/components/Avatar";
 import { IconBrandLinkedin, IconMail, IconWorldWww } from "@tabler/icons-react";
@@ -21,7 +21,7 @@ const StartupCard = (startup: Startup) => {
   return (
     <>
       <Image
-        src={urlForImage(startup.logo)}
+        src={getImageUrl(startup.logo)}
         alt={startup.name}
         width={250}
         height={250}
@@ -56,12 +56,12 @@ const StartupDialog = ({ startup }: StartupDialogProps) => {
       <DialogContent>
         <DialogHeader className="flex flex-row justify-start items-center">
           <Avatar className={"w-[50px] h-[50px]"}>
-            <AvatarImage src={urlForImage(startup.logo)} alt={startup.name} />
+            <AvatarImage src={getImageUrl(startup.logo)} alt={startup.name} />
           </Avatar>
           <DialogTitle className="text-black ml-4">{startup.name}</DialogTitle>
         </DialogHeader>
         <div className="text-black ml-2 flex flex-col justify-center">
-          <SanityBlock blocks={startup.description ?? []} />
+          <BlockRenderer blocks={startup.description ?? []} />
           <div className="flex flex-row justify-center items-center mt-2">
             {startup.url && (
               <Button

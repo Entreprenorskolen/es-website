@@ -1,45 +1,69 @@
-import { client } from "@app/config";
 import { AboutPage, FacultyMember } from "@app/types";
+import { ABOUT_PAGE_DATA } from "@app/text/about";
+import { FACULTY_MEMBERS_DATA } from "@app/text/faculty-members";
 
-export async function getAboutData() {
-  const query = `*[_type == "about"][0]{
-    title,
-    titleText,
-    image,
-    aboutTitle,
-    aboutText
-  }`;
-
+export async function getAboutData(): Promise<AboutPage | null> {
   try {
-    const result = await client.fetch<AboutPage>(
-      query,
-      {},
-      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
-    );
+    // Use hardcoded data instead of Sanity
+    const aboutData = ABOUT_PAGE_DATA[0];
+
+    // Transform hardcoded data to match AboutPage interface
+    const result: AboutPage = {
+      _type: "about",
+      _id: "hardcoded-about",
+      _rev: "1",
+      _createdAt: new Date(),
+      _updatedAt: new Date(),
+      title: aboutData.title,
+      titleText: aboutData.titleText,
+      image: aboutData.image as AboutPage["image"],
+      aboutTitle: aboutData.aboutTitle,
+      aboutText: aboutData.aboutText,
+    };
+
     return result;
   } catch (error) {
-    console.error("Error fetching about data:", error);
+    console.error("Error loading about data:", error);
     return null;
   }
 }
 
-export async function getFacultyMembers() {
-  const query = `*[_type == "facultyMembers"]{
-    name,
-    title,
-    image,
-    bio
-  }`;
-
+export async function getFacultyMembers(): Promise<FacultyMember[] | null> {
   try {
-    const result = await client.fetch<FacultyMember[]>(
-      query,
-      {},
-      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
+    // Transform hardcoded faculty data to match FacultyMember interface
+    const facultyMembers: FacultyMember[] = FACULTY_MEMBERS_DATA.map(
+      (member, index) => {
+        const bioBlocks = member.bio
+          .split("\n\n")
+          .map((paragraph, paragraphIndex) => ({
+            _key: `bio-${index}-paragraph-${paragraphIndex}`,
+            _type: "block" as const,
+            style: "normal" as const,
+            children: [
+              {
+                text: paragraph.trim(),
+              },
+            ],
+            markDefs: [],
+          }));
+
+        return {
+          _type: "facultyMembers",
+          _id: `hardcoded-faculty-${index}`,
+          _rev: "1",
+          _createdAt: new Date(member.createdAt),
+          _updatedAt: new Date(member.updatedAt),
+          name: member.name,
+          title: member.title,
+          image: member.image as any, // Use the direct image path from hardcoded data
+          bio: bioBlocks as FacultyMember["bio"],
+        };
+      },
     );
-    return result;
+
+    return facultyMembers;
   } catch (error) {
-    console.error("Error fetching faculty members:", error);
+    console.error("Error loading faculty members:", error);
     return null;
   }
 }

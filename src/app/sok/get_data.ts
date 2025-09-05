@@ -1,57 +1,29 @@
-import { client } from "@app/config";
 import { ApplyPage } from "@app/types";
+import { APPLY_PAGE_DATA } from "@app/text/apply";
 
-export async function getData() {
-  const query = `*[_type == 'apply'][0]{
-    title,
-    intro{
-      title,
-      content
-    },
-    process{
-      title,
-      timeline[]{
-        date,
-        title,
-        description
-      }
-    },
-    content{
-      title,
-      introText,
-      informationBoxes[]{
-        title,
-        text
-      }
-    },
-    steps{
-      title,
-      steps[]{
-        title,
-        text
-      },
-      outroText[]{
-        title,
-        text,
-        url
-      }
-    },
-    FAQ[]{
-      _key,
-      title,
-      content
-    }
-  }`;
-
+export async function getData(): Promise<ApplyPage | null> {
   try {
-    const result = await client.fetch<ApplyPage>(
-      query,
-      {},
-      { next: { revalidate: 3600 } }, // ✅ Cache for 1 hour
-    );
+    // Use hardcoded data instead of Sanity
+    const applyData = APPLY_PAGE_DATA[0];
+
+    // Transform hardcoded data to match ApplyPage interface
+    const result: ApplyPage = {
+      _type: "apply",
+      _id: "hardcoded-apply",
+      _rev: "1",
+      _createdAt: new Date(),
+      _updatedAt: new Date(),
+      title: applyData.title,
+      intro: applyData.intro as ApplyPage["intro"],
+      process: applyData.process as ApplyPage["process"],
+      content: applyData.content as ApplyPage["content"],
+      steps: applyData.steps as ApplyPage["steps"],
+      FAQ: applyData.FAQ as ApplyPage["FAQ"],
+    };
+
     return result;
   } catch (error) {
-    console.error("Error fetching apply data:", error);
+    console.error("Error loading apply data:", error);
     return null;
   }
 }

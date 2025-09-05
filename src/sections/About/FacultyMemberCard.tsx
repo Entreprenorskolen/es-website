@@ -1,20 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { SanityBlock, H4 } from "@app/components";
+import { H4 } from "@app/components";
 import Image from "next/image";
 import { FacultyMember } from "@app/types";
-import { urlForProfileImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 
 export const FacultyMemberCard = ({ member }: { member: FacultyMember }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Debug logging
+  console.log("Faculty member:", member.name);
+  console.log("Bio data:", member.bio);
+  console.log("Bio length:", member.bio?.length);
 
   return (
     <div className="flex flex-col items-center text-center max-w-xl mx-auto">
       {member.image && (
         <div className="relative w-48 h-48 mb-6">
           <Image
-            src={urlForProfileImage(member.image)}
+            src={getImageUrl(member.image)}
             alt={member.name}
             fill
             className="object-cover rounded-full grayscale border-2 border-gray-200"
@@ -32,7 +37,16 @@ export const FacultyMemberCard = ({ member }: { member: FacultyMember }) => {
               !isExpanded ? "line-clamp-3" : ""
             }`}
           >
-            <SanityBlock blocks={member.bio} />
+            {/* Temporary simple text rendering for debugging */}
+            {member.bio && member.bio.length > 0 ? (
+              member.bio.map((block, blockIndex) => (
+                <p key={block._key || blockIndex} className="mb-2">
+                  {block.children?.map((child) => child.text).join("")}
+                </p>
+              ))
+            ) : (
+              <p>No bio available</p>
+            )}
           </div>
           {member.bio && member.bio.length > 0 && (
             <button

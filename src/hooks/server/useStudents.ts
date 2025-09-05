@@ -2,9 +2,9 @@
 
 import { Student } from "@app/types";
 import { useEffect, useState, useRef } from "react";
-import { client } from "@app/config";
+import { STUDENTS_DATA } from "@app/text/students";
 
-// Simple cache to prevent unnecessary API calls
+// Simple cache to prevent unnecessary data processing
 const studentsCache = new Map<string, { data: Student[]; timestamp: number }>();
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
@@ -37,34 +37,74 @@ const useStudents = (
 
     try {
       setIsLoading(true);
-      const baseQuery = `
-        {
-            name,
-            description,
-            linkedin,
-            year,
-            current,
-            image
+
+      // Filter hardcoded data instead of using Sanity query
+      const yearNum = Number(year);
+
+      // Debug logging
+      console.log(
+        "useStudents - isCurrent:",
+        isCurrent,
+        "year:",
+        year,
+        "yearNum:",
+        yearNum,
+      );
+      console.log("useStudents - Total students:", STUDENTS_DATA.length);
+      console.log(
+        "useStudents - Sample students:",
+        STUDENTS_DATA.slice(0, 3).map((s) => ({
+          name: s.name,
+          current: s.current,
+          year: s.year,
+        })),
+      );
+
+      const filteredStudents = STUDENTS_DATA.filter((student) => {
+        if (isCurrent) {
+          return student.current === true && student.year === yearNum;
+        } else {
+          return (
+            (student.current === false || student.current === undefined) &&
+            student.year === yearNum
+          );
         }
-      `;
+      }).map((student) => ({
+        _type: "student" as const,
+        name: student.name,
+        description: student.description,
+        linkedin: student.linkedin || null,
+        current: student.current,
+        image: student.image as any, // Use direct image path
+        year: student.year,
+      }));
 
-      const query = isCurrent
-        ? `*[_type == "student" && current == true && year == $year] ${baseQuery}`
-        : `*[_type == "student" && year == $year && (current == false || !defined(current))] ${baseQuery}`;
+      // Simulate async operation for consistency
+      await new Promise((resolve) => setTimeout(resolve, 100));
 
-      const params = { year: Number(year) };
-      const data = await client.fetch<Student[]>(query, params, {
-        signal: abortControllerRef.current.signal,
-        next: { revalidate: 1800 }, // ✅ Cache for 30 minutes
-      });
+      console.log(
+        "useStudents - Filtered students count:",
+        filteredStudents.length,
+      );
+      console.log(
+        "useStudents - Filtered students:",
+        filteredStudents.map((s) => ({
+          name: s.name,
+          current: s.current,
+          year: s.year,
+        })),
+      );
 
       // Cache the result
-      studentsCache.set(cacheKey, { data, timestamp: now });
-      setStudents(data);
+      studentsCache.set(cacheKey, { data: filteredStudents, timestamp: now });
+      setStudents(filteredStudents);
     } catch (error) {
       if (error instanceof Error && error.name !== "AbortError") {
-        console.error("Error fetching students:", error);
+        console.error("Error processing students:", error);
+        console.error("Error stack:", error.stack);
       }
+      // Set empty array on error to prevent infinite loading
+      setStudents([]);
     } finally {
       setIsLoading(false);
     }

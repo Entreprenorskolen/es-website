@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 import { HomePage } from "@app/types";
 import {
   H2,
@@ -117,7 +117,7 @@ const SuccessStoriesSection = ({
             >
               <div className="flex items-center gap-4">
                 <Image
-                  src={urlForImage(story.image)}
+                  src={getImageUrl(story.image)}
                   alt={story.name}
                   width={60}
                   height={60}

@@ -1,4 +1,4 @@
-import { SanityBlock, H3 } from "@app/components";
+import { BlockRenderer, H3 } from "@app/components";
 import { PRIMARY_BLUE, PRIMARY_ORANGE } from "@app/constants/colors";
 import { Block } from "@app/types";
 
@@ -53,9 +53,7 @@ export function Process({ title, timeline }: ProcessSectionProps) {
                 {item.title}
               </span>
             </div>
-            <div className="prose max-w-none">
-              <SanityBlock blocks={item.description} />
-            </div>
+            <BlockRenderer blocks={item.description} />
           </div>
         ))}
       </div>

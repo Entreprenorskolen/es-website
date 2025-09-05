@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FullWidthContainer } from "@app/components/FullWidthContainer";
 import { useColors } from "@app/context/ColorContext";
-import { FooterData } from "@app/types/sanity";
+import { FooterData } from "@app/types/data";
 
 interface FooterProps {
   footerData?: FooterData | null;

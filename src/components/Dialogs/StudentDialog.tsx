@@ -1,6 +1,6 @@
 import { Student } from "@app/types";
 import Image from "next/image";
-import { urlForImage } from "@app/config";
+import { getImageUrl } from "@app/lib/image-utils";
 import {
   Button,
   Dialog,
@@ -28,7 +28,7 @@ const StartupCard = (student: Student) => {
   return (
     <>
       <Image
-        src={urlForImage(student.image)}
+        src={getImageUrl(student.image)}
         alt={student.name}
         width={175}
         height={225}
@@ -62,7 +62,7 @@ const StudentDialog = ({ student, className }: StudentDialogProps) => {
       <DialogContent>
         <DialogHeader className="flex flex-row justify-start items-center">
           <Image
-            src={urlForImage(student.image)}
+            src={getImageUrl(student.image)}
             alt={student.name}
             width={77}
             height={100}
