@@ -30,7 +30,7 @@ export const STARTUPS_DATA: StartupData[] = [
     id: "0084ec74-546a-4914-8039-d3830766e163xx",
     name: "Cortex Robotics",
     description:
-      "Cortex Robotics develops intelligent pipe-climbing robots for industrial inspection, targeting corrosion under insulation (CUI), one of the industry’s most costly and hazardous challenges. We exist to protect people and the planet by making inspection safer, more efficient, and data-driven through smart, autonomous robotics. Our solution reduces human exposure to risk, minimizes costly downtime, and unlocks structured data for better maintenance decisions. The company was founded at NTNU School of Entrepreneurship by Daniel Skogland, Celine Slåttelia, Ingeborg Bogen, Kristian Romen, and Oscar Lae, and is supported by a strong entrepreneurial ecosystem and an experienced Advisory Board with deep industry and academic expertise.",
+      "Cortex Robotics develops intelligent pipe-climbing robots to inspect for corrosion under insulation (CUI). This makes industrial inspections safer and more data-driven, reducing human risk and costly downtime while enabling better maintenance decisions. The company was founded at NTNU School of Entrepreneurship by Daniel Skogland, Celine Slåttelia, Ingeborg Bogen, Kristian Romen, and Oscar Lae, and is supported by a strong entrepreneurial ecosystem and an experienced Advisory Board with deep industry and academic expertise.",
     url: "https://www.cortex-robotics.com/",
     linkedin: "https://www.linkedin.com/company/cortex-robotics/",
     mail: "",
@@ -43,7 +43,7 @@ export const STARTUPS_DATA: StartupData[] = [
     id: "0084ec74-546a-4914-8039-d3830766e163yy",
     name: "Bifrozt",
     description:
-      "Bifrozt recognizes the critical need to enhance organizational cyber defense capabilities by bridging the gap between automation and human expertise.Through their Incident Preparation Platform, Bifrozt aims to ensure that organizations of all sizes have access to quality incident response plans and procedures. The platform provides a comprehensive framework for creating, testing, and maintaining response documentation while offering realistic scenario-based practice sessions. This creates a continuous improvement loop that better prepares teams to handle incidents effectively when they arise.Bifrozt's mission is to secure the digital future by bridging today's cyber challenges with tomorrow's innovations, starting with simplifying incident preparation for organizations worldwide.",
+      "Bifrozt recognizes the critical need to enhance organizational cyber defense capabilities by bridging the gap between automation and human expertise. Through their Incident Preparation Platform, Bifrozt aims to ensure that organizations of all sizes have access to quality incident response plans and procedures. Bifrozt's mission is to secure the digital future by bridging today's cyber challenges with tomorrow's innovations, starting with simplifying incident preparation for organizations worldwide.",
     url: "https://www.bifrozt.com/",
     linkedin: "https://www.linkedin.com/company/bifrozt/",
     mail: "",
