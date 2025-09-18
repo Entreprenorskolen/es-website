@@ -34,14 +34,14 @@ export const STUDENTPAGE_PAGE_DATA = [
       },
       {
         _key: "be86356c07xx",
-        image: "/images/pages/students/stories/student_story_rolf.jpg",
+        image: "/images/pages/students/stories/student_story_julie.JPG",
         name: "Julie",
         roleInStartup: "Ex. Co-Founder Out There",
         text: "ES gir deg selvtilliten til å prøve og feile med en god gjeng i ryggen! Man kommer langt med hardt arbeid, ambisiøse mennesker og en solid dose motivasjon 🚀",
       },
       {
         _key: "be86356c07yy",
-        image: "/images/pages/students/stories/student_story_rolf.jpg",
+        image: "/images/pages/students/stories/student_story_hedda.jpg",
         name: "Hedda",
         roleInStartup: "Founder of Naere Medical",
         text: "ES gir meg verktøyene jeg trenger for å jage etter drømmen, om å en dag leve av å drive egen bedrift!",

@@ -15,9 +15,9 @@ export interface StartupData {
 export const STARTUPS_DATA: StartupData[] = [
   {
     id: "0084ec74-546a-4914-8039-d3830766e163yy",
-    name: "Juvo Solutions",
+    name: "Juvo",
     description:
-      "Juvo are build the tools that get you into a state of flow. By taming the chaos of modern knowledge work, we bring all your project materials into one calm, powerful workbench called Useful. We want to amplify your expertise and help you produce your best work with effortless, uninterrupted focus",
+      "Juvo are building the tools that get you into a state of flow. By taming the chaos of modern knowledge work, we bring all your project materials into one calm, powerful workbench called Useful. We want to amplify your expertise and help you produce your best work with effortless, uninterrupted focus",
     url: "https://www.juvosolutions.co/",
     linkedin: "https://www.linkedin.com/company/juvosolutions/",
     mail: "",
@@ -36,6 +36,19 @@ export const STARTUPS_DATA: StartupData[] = [
     mail: "",
     isInHouse: true,
     logo: "image-cortex-png",
+    createdAt: "2024-03-12T19:41:56Z",
+    updatedAt: "2025-06-02T13:15:01Z",
+  },
+    {
+    id: "0084ec74-546a-4914-8039-d3830766e163yy",
+    name: "Bifrozt",
+    description:
+      "Bifrozt recognizes the critical need to enhance organizational cyber defense capabilities by bridging the gap between automation and human expertise.Through their Incident Preparation Platform, Bifrozt aims to ensure that organizations of all sizes have access to quality incident response plans and procedures. The platform provides a comprehensive framework for creating, testing, and maintaining response documentation while offering realistic scenario-based practice sessions. This creates a continuous improvement loop that better prepares teams to handle incidents effectively when they arise.Bifrozt's mission is to secure the digital future by bridging today's cyber challenges with tomorrow's innovations, starting with simplifying incident preparation for organizations worldwide.",
+    url: "https://www.bifrozt.com/",
+    linkedin: "https://www.linkedin.com/company/bifrozt/",
+    mail: "",
+    isInHouse: true,
+    logo: "image-bifrozt-png",
     createdAt: "2024-03-12T19:41:56Z",
     updatedAt: "2025-06-02T13:15:01Z",
   },

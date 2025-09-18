@@ -6,6 +6,7 @@ export interface ImageMapping {
 }
 
 export const IMAGE_MAPPING: ImageMapping = {
+  "image-bifrozt-png": "/images/startups/bifrozt.png",
   "image-cortex-png": "/images/startups/cortex-robotics.png",
   "image-juvo-png": "/images/startups/juvo-solutions.png",
   "image-eb6e919303a918b0f251ab01a77616ad5efbd7ee-720x720-png": "/images/startups/tendro_1.png",
