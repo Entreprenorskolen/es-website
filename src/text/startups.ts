@@ -39,7 +39,7 @@ export const STARTUPS_DATA: StartupData[] = [
     createdAt: "2024-03-12T19:41:56Z",
     updatedAt: "2025-06-02T13:15:01Z",
   },
-    {
+  {
     id: "0084ec74-546a-4914-8039-d3830766e163yy",
     name: "Bifrozt",
     description:
