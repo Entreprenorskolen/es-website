@@ -14,6 +14,32 @@ export interface StartupData {
 
 export const STARTUPS_DATA: StartupData[] = [
   {
+    id: "0084ec74-546a-4914-8039-d3830766e163yy",
+    name: "Juvo Solutions",
+    description:
+      "Juvo are build the tools that get you into a state of flow. By taming the chaos of modern knowledge work, we bring all your project materials into one calm, powerful workbench called Useful. We want to amplify your expertise and help you produce your best work with effortless, uninterrupted focus",
+    url: "https://www.juvosolutions.co/",
+    linkedin: "https://www.linkedin.com/company/juvosolutions/",
+    mail: "",
+    isInHouse: true,
+    logo: "image-juvo-png",
+    createdAt: "2024-03-12T19:41:56Z",
+    updatedAt: "2025-06-02T13:15:01Z",
+  },
+  {
+    id: "0084ec74-546a-4914-8039-d3830766e163xx",
+    name: "Cortex Robotics",
+    description:
+      "Cortex Robotics develops intelligent pipe-climbing robots for industrial inspection, targeting corrosion under insulation (CUI), one of the industry’s most costly and hazardous challenges. We exist to protect people and the planet by making inspection safer, more efficient, and data-driven through smart, autonomous robotics. Our solution reduces human exposure to risk, minimizes costly downtime, and unlocks structured data for better maintenance decisions. The company was founded at NTNU School of Entrepreneurship by Daniel Skogland, Celine Slåttelia, Ingeborg Bogen, Kristian Romen, and Oscar Lae, and is supported by a strong entrepreneurial ecosystem and an experienced Advisory Board with deep industry and academic expertise.",
+    url: "https://www.cortex-robotics.com/",
+    linkedin: "https://www.linkedin.com/company/cortex-robotics/",
+    mail: "",
+    isInHouse: true,
+    logo: "image-cortex-png",
+    createdAt: "2024-03-12T19:41:56Z",
+    updatedAt: "2025-06-02T13:15:01Z",
+  },
+  {
     id: "0084ec74-546a-4914-8039-d3830766e163",
     name: "Tendro",
     description:
@@ -34,7 +60,7 @@ export const STARTUPS_DATA: StartupData[] = [
     url: "",
     linkedin: "",
     mail: "andersson.elink@gmail.com",
-    isInHouse: true,
+    isInHouse: false,
     logo: "image-51b7af36169112e8668769dc9ae9ab697e4e6c38-500x500-png",
     createdAt: "2024-11-15T10:31:58Z",
     updatedAt: "2025-02-23T13:31:08Z",
@@ -176,7 +202,7 @@ export const STARTUPS_DATA: StartupData[] = [
     url: "",
     linkedin: "https://www.linkedin.com/company/nayasolutions/",
     mail: "",
-    isInHouse: true,
+    isInHouse: false,
     logo: "image-d56d9eceaac6ff988df9b3868f235e38452da13c-1024x1024-jpg",
     createdAt: "2024-03-12T19:36:27Z",
     updatedAt: "2025-02-23T13:31:08Z",
@@ -457,7 +483,7 @@ export const STARTUPS_DATA: StartupData[] = [
     url: "https://www.scoped.no/",
     linkedin: "https://no.linkedin.com/company/scoped-solutions",
     mail: "henrik@scoped.no",
-    isInHouse: true,
+    isInHouse: false,
     logo: "image-81f5278ab22e2391cb3a640ebac5ff203e3eb4e4-500x500-png",
     createdAt: "2024-11-11T14:26:04Z",
     updatedAt: "2025-02-23T13:31:08Z",

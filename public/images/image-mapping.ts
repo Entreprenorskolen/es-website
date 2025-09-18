@@ -6,6 +6,8 @@ export interface ImageMapping {
 }
 
 export const IMAGE_MAPPING: ImageMapping = {
+  "image-cortex-png": "/images/startups/cortex-robotics.png",
+  "image-juvo-png": "/images/startups/juvo-solutions.png",
   "image-eb6e919303a918b0f251ab01a77616ad5efbd7ee-720x720-png": "/images/startups/tendro_1.png",
   "image-51b7af36169112e8668769dc9ae9ab697e4e6c38-500x500-png": "/images/startups/floke_2.png",
   "image-938363e58acf75bf5e89eb705b33f72479f0158f-401x400-png": "/images/startups/dogu_3.png",
