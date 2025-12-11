@@ -17,7 +17,7 @@ export const STARTUPS_DATA: StartupData[] = [
     id: "0084ec74-546a-4914-8039-d3830766e163yy",
     name: "Juvo",
     description:
-      "Juvo are building the tools that get you into a state of flow. By taming the chaos of modern knowledge work, we bring all your project materials into one calm, powerful workbench called Useful. We want to amplify your expertise and help you produce your best work with effortless, uninterrupted focus",
+      "Juvo are creating a new way to generate text. Their AI-native writing environment facilitates a smarter and more efficient workflow for writing academic text for students ",
     url: "https://www.juvosolutions.co/",
     linkedin: "https://www.linkedin.com/company/juvosolutions/",
     mail: "",
