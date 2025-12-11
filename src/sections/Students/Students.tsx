@@ -8,7 +8,7 @@ import { StudentDialog } from "@app/components/Dialogs/StudentDialog";
 import { useState } from "react";
 
 export function StudentSection({ studentTitle }: { studentTitle: string }) {
-  const [currentYear, setCurrentYear] = useState("2026");
+  const [currentYear, setCurrentYear] = useState("2027");
   const { students, isLoading } = useStudents("current", currentYear);
 
   return (
