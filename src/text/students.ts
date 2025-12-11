@@ -258,7 +258,8 @@ export const STUDENTS_DATA: StudentData[] = [
     id: "matilde-ytre-eide-bjaarstad-1022",
     name: "Matilde Ytre-Eide Bjaarstad",
     description: "",
-    linkedin: "https://www.linkedin.com/in/matilde-ytre-eide-bjaarstad-14917132b",
+    linkedin:
+      "https://www.linkedin.com/in/matilde-ytre-eide-bjaarstad-14917132b",
     current: true,
     year: 2027,
     image: "/images/students/Matilde_Ytre-Eide_Bjaarstad_1022.jpg",

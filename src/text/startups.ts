@@ -65,7 +65,7 @@ export const STARTUPS_DATA: StartupData[] = [
     createdAt: "2025-03-20T11:51:37Z",
     updatedAt: "2025-03-20T11:52:38Z",
   },
-    {
+  {
     id: "0084ec74-546a-4914-8039-d3830766e163yy",
     name: "Naere Medical",
     description:
