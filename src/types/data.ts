@@ -20,7 +20,10 @@ export interface Block {
   _type: "block";
   style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   children: {
+    _key?: string;
+    _type?: string;
     text: string;
+    marks?: string[];
   }[];
   markDefs: MarkDefinition[]; // ✅ Replace `any[]` with `MarkDefinition[]`
   listItem?: "bullet" | "number";

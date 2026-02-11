@@ -6,44 +6,51 @@ interface BlockRendererProps {
   className?: string;
 }
 
-interface ProcessedChild {
-  text: string;
-  marks?: string[];
-  markDefs?: MarkDefinition[];
-}
-
 export function BlockRenderer({ blocks, className = "" }: BlockRendererProps) {
   if (!blocks || blocks.length === 0) {
     return null;
   }
 
-  const processChildren = (
-    children: { text: string }[],
+  const renderChild = (
+    child: { _key?: string; text: string; marks?: string[] },
     markDefs: MarkDefinition[] = [],
-  ): ProcessedChild[] => {
-    return children.map((child) => ({
-      text: child.text,
-      marks: [], // We'll handle marks if needed in the future
-      markDefs,
-    }));
-  };
+    index: number,
+  ): React.ReactNode => {
+    const key = child._key || index;
+    let content: React.ReactNode = child.text;
 
-  const renderTextWithMarks = (child: ProcessedChild) => {
-    let text = child.text;
-
-    // Handle links and other marks if markDefs are present
-    if (child.markDefs && child.markDefs.length > 0) {
-      // For now, we'll render plain text
-      // In the future, we can add support for links, bold, italic, etc.
-      return text;
+    if (child.marks && child.marks.length > 0) {
+      for (const markKey of child.marks) {
+        if (markKey === "strong") {
+          content = <strong key={`${key}-strong`}>{content}</strong>;
+        } else if (markKey === "em") {
+          content = <em key={`${key}-em`}>{content}</em>;
+        } else {
+          const markDef = markDefs.find((m) => m._key === markKey);
+          if (markDef && markDef._type === "link" && markDef.href) {
+            content = (
+              <a
+                key={`${key}-link`}
+                href={markDef.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-orange-500 hover:underline"
+              >
+                {content}
+              </a>
+            );
+          }
+        }
+      }
     }
 
-    return text;
+    return <React.Fragment key={key}>{content}</React.Fragment>;
   };
 
   const renderBlock = (block: Block, index: number) => {
-    const processedChildren = processChildren(block.children, block.markDefs);
-    const textContent = processedChildren.map(renderTextWithMarks).join("");
+    const textContent = block.children.map((child, i) =>
+      renderChild(child, block.markDefs, i),
+    );
 
     // Handle different block styles
     switch (block.style) {

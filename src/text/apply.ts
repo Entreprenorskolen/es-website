@@ -108,6 +108,8 @@ export const APPLY_PAGE_DATA = [
         {
           _key: "077f03a70527",
           text: "Motivasjonsbrevet er obligatorisk å laste opp, og legger fundamentet for hvem som blir innkalt til intervju. ",
+          linkText: "Last ned mal for Motivasjonsbrev",
+          linkUrl: "/NSE-Application-ETTERNAVN-2.pdf",
           title: "Motivasjonsbrev",
         },
         {
@@ -154,7 +156,7 @@ export const APPLY_PAGE_DATA = [
             {
               _key: "817450272d87",
               _type: "link",
-              href: "https://drive.google.com/file/d/1OJOpG0i583aYa_6IsQGe5mkP9OMUyG3S/view?usp=sharing",
+              href: "/NSE-Application-ETTERNAVN-2.pdf",
             },
           ],
           style: "normal",
@@ -263,7 +265,7 @@ export const APPLY_PAGE_DATA = [
                 {
                   _key: "07d76ad8a7e8",
                   _type: "link",
-                  href: "https://drive.google.com/file/d/1OJOpG0i583aYa_6IsQGe5mkP9OMUyG3S/view?usp=sharing",
+                  href: "/NSE-Application-ETTERNAVN-2.pdf",
                 },
               ],
               style: "normal",
@@ -360,6 +362,8 @@ export const APPLY_PAGE_DATA = [
         {
           _key: "0705fe20f355",
           text: "Last opp vedlegg du ønsker å ha med på søknaden. Merk* at Motivasjonsbrevet er obligatorisk og må lastes opp for å vurderes videre. Andre vedlegg som ofte er med er attester, CV, Karakterutskrift. ",
+          linkText: "Last ned mal for Motivasjonsbrev",
+          linkUrl: "/NSE-Application-ETTERNAVN-2.pdf",
           title: "Last opp vedlegg",
         },
       ],

@@ -6,6 +6,8 @@ interface StepsSectionProps {
   steps: {
     title: string;
     text: string;
+    linkText?: string;
+    linkUrl?: string;
   }[];
   outroText: {
     title: string;
@@ -62,6 +64,17 @@ export function Steps({ title, steps, outroText }: StepsSectionProps) {
             <p className="text-gray-600">
               <TextWithUrls text={step.text} />
             </p>
+            {step.linkUrl && step.linkText && (
+              <a
+                href={step.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: PRIMARY_ORANGE }}
+                className="inline-block mt-2 font-medium hover:underline"
+              >
+                {step.linkText}
+              </a>
+            )}
           </div>
         ))}
       </div>

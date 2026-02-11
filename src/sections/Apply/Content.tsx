@@ -16,6 +16,8 @@ interface ContentSectionProps {
   informationBoxes: {
     title: string;
     text: string;
+    linkText?: string;
+    linkUrl?: string;
   }[];
 }
 
@@ -43,6 +45,17 @@ export function Content({
             </div>
             <H3 className="font-semibold text-lg">{item.title}</H3>
             <p className="text-gray-500 mt-4 text-base">{item.text}</p>
+            {item.linkUrl && item.linkText && (
+              <a
+                href={item.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: PRIMARY_ORANGE }}
+                className="mt-4 font-medium hover:underline"
+              >
+                {item.linkText}
+              </a>
+            )}
           </div>
         ))}
       </div>
