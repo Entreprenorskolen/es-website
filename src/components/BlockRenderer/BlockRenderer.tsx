@@ -13,7 +13,7 @@ export function BlockRenderer({ blocks, className = "" }: BlockRendererProps) {
 
   const renderChild = (
     child: { _key?: string; text: string; marks?: string[] },
-    markDefs: MarkDefinition[] = [],
+    markDefs: MarkDefinition[],
     index: number,
   ): React.ReactNode => {
     const key = child._key || index;
