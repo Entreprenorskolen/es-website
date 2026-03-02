@@ -215,7 +215,7 @@ export const APPLY_PAGE_DATA = [
       timeline: [
         {
           _key: "dfa959b3bb22",
-          date: "5. og 6. Mars",
+          date: "4. og 5. mars",
           description: [
             {
               _key: "68c8c4f5b90e",
@@ -225,10 +225,76 @@ export const APPLY_PAGE_DATA = [
                   _key: "6b6e4883841e",
                   _type: "span",
                   marks: [],
-                  text: "Møt studentene på NTNUs Entreprenørskole og hør om studiehverdagen deres. Den 5. mars holdes det informasjonsmøte på Gløshaugen i Trondheim. For de av dere som ikke har mulighet til å møte i person så organiseres et digitalt informasjonsmøte torsdag 6. Mars.",
+                  text: "Møt studentene ved NTNUs Entreprenørskole og hør om studiehverdagen deres. 📍 4. mars kl. 15:15 arrangeres det informasjonsmøte på Gløshaugen i Trondheim.",
                 },
               ],
               markDefs: [],
+              style: "normal",
+            },
+            {
+              _key: "a1b2c3d4e5f6",
+              _type: "block",
+              children: [
+                {
+                  _key: "a1b2c3d4e5f60",
+                  _type: "span",
+                  marks: [],
+                  text: "Lenke til arrangementet: ",
+                },
+                {
+                  _key: "a1b2c3d4e5f61",
+                  _type: "span",
+                  marks: ["link1"],
+                  text: "Facebook-arrangement (fysisk)",
+                },
+              ],
+              markDefs: [
+                {
+                  _key: "link1",
+                  _type: "link",
+                  href: "https://www.facebook.com/events/801263672317794",
+                },
+              ],
+              style: "normal",
+            },
+            {
+              _key: "b2c3d4e5f6a7",
+              _type: "block",
+              children: [
+                {
+                  _key: "b2c3d4e5f6a70",
+                  _type: "span",
+                  marks: [],
+                  text: "For dere som ikke har mulighet til å møte opp fysisk, arrangeres det et digitalt informasjonsmøte torsdag 5. mars.",
+                },
+              ],
+              markDefs: [],
+              style: "normal",
+            },
+            {
+              _key: "c3d4e5f6a7b8",
+              _type: "block",
+              children: [
+                {
+                  _key: "c3d4e5f6a7b80",
+                  _type: "span",
+                  marks: [],
+                  text: "Lenke til arrangementet: ",
+                },
+                {
+                  _key: "c3d4e5f6a7b81",
+                  _type: "span",
+                  marks: ["link2"],
+                  text: "Facebook-arrangement (digitalt)",
+                },
+              ],
+              markDefs: [
+                {
+                  _key: "link2",
+                  _type: "link",
+                  href: "https://www.facebook.com/events/1870588300301603",
+                },
+              ],
               style: "normal",
             },
           ],

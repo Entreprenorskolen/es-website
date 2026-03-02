@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HomePage } from "@app/types";
 import {
   HeaderSection,
@@ -45,7 +46,14 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col mt-24">
+    <main className="flex min-h-screen flex-col mt-20">
+      <Link
+        href="/sok"
+        className="block w-full text-[#002B4E] text-center py-2 px-4 font-semibold hover:underline transition-colors"
+      >
+        📍 Informasjonsmøte 4. og 5. mars — Les mer og søk her →
+      </Link>
+
       {/* ✅ Updated Header Section with CTA */}
       <HeaderSection
         title={content.title || "Welcome"}
