@@ -15,7 +15,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "ada-lill-aarhus-1000",
     name: "Ada-Lill Aarhus",
-    description: "",
+    description: `Despite having an eastland dialect, Ada grew up among the seven mountains in Bergen.\n\nFrom an early age, she discovered a strong desire to make a positive impact on society, something clearly reflected in her career choices. She first pursued a bachelor's degree in Renewable Energy to contribute to the green energy transition, and have now joined NTNU's School of Entrepreneurship, where she strives to create solutions that benefit both people and the planet. She thrives at the intersection of technology, science, and purpose, and enjoys tackling complex challenges.\n\nAlongside her drive for innovation and sustainability, Ada is deeply people-oriented. She has been involved in the student festival UKA on two occasions, first as an HSE Coordinator, and later as HR Responsible. In addition, she served in the Norwegian Armed Forces in 2021 as a representative of the Engineering Battalion, responsible for the well-being and rights of 400 conscripts.\n\nAda aspires to be part of something greater than herself, surrounded by ambitious and inspiring people. Her everyday mindset is: "If not you, who? If not now, when?"`,
     linkedin: "https://www.linkedin.com/in/adalill",
     current: true,
     year: 2027,
@@ -26,7 +26,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "adele-ferger-1001",
     name: "Adele Ferger",
-    description: "",
+    description: `Creative by nature and driven by curiosity, Adele has always been drawn to building ideas rather than following predefined paths. She thrives in environments where creativity, experimentation, and collaboration are at the core. While studying Electronic Systems Design and Innovation at NTNU for three years, Adele gained hands-on experience in healthcare innovation, shaping her understanding of what meaningful change she wants to make.\n\nWith a solid academic background and a strong interest in how technology, systems, and people connect, Adele approaches challenges with both structure and imagination. Her studies have given her analytical tools, but it's her creative mindset that pushes her to see opportunities where others see limitations. She thrives when she's allowed to think freely, test ideas, and turn concepts into something tangible.\n\nWhen experimentation began to fade from her academic path, Adele realized it was time for something new. She had always known she wanted to build her own future, and upon discovering ES, she realized that the high speed and intense working style was a perfect fit for her. Being able to combine the most engaging parts of her academic background with her creative drive, ES opens up the opportunity to create real impact.`,
     linkedin: "https://www.linkedin.com/in/adele-ferger-a27212324/",
     current: true,
     year: 2027,
@@ -37,7 +37,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "alette-bugge-lysa-1002",
     name: "Alette Bugge Lyså",
-    description: "",
+    description: `Alette grew up in Norway's capital, Oslo. She has always had a strong passion for travel, and after high school she was given the opportunity to move to Canada to work with research at the University of Guelph. This experience sparked her interest in biology and motivated her to pursue a bachelor's degree in the field.\n\nAfter moving to Trondheim, Alette quickly became involved in the student festival UKA, where she thrived on the challenges it presented. In 2022, she was given the opportunity to serve as Head of Arena and join the board of UKA-23. In this role, she worked tirelessly for two years, building an organization from seven to over 2,000 volunteers and managing a budget of 70 MNOK.\n\nThrough her work with UKA, Alette discovered a deep passion for building organizations from the ground up. This realization led her to NTNU's School of Entrepreneurship, where her goal is to create something that makes a meaningful difference in the world, something she believes is achievable through hard work and determination.`,
     linkedin: "https://www.linkedin.com/in/alette-bugge-lys%C3%A5-91025223a",
     current: true,
     year: 2027,
@@ -48,7 +48,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "andre-fugledal-1003",
     name: "André Fugledal",
-    description: "",
+    description: `As my classmates from my bachelors said, "What the hell are you doing here?". My response was "I like to think far ahead."\n\nWhile i enjoyed the technical depth of my automation studies, my true passion wasn't just solving equations, but understanding the bigger problems they solve. I focus on the end results, not just today. Ultimately, that mindset led me to NSE, and I love it.\n\nMy name is André, a Sunnmøring from Ålesund and a people-oriented person. As a sales advisor at Elkjøp for three years, I got to combine two of my core interests technology and helping people. In that role I learned how technology can be used to solve real, problems and how responsibility and trust are built through understanding others' needs.\n\nI am drawn to challenges that require persistence and grit - a trait I carry with me everywhere, whether its pushing through demanding studies or conquering sports such as climbing and sailing. Together, these experiences have given me a clear direction: to work on a startup where I can combine my passion for technology, problem-solving with real responsibility and long-term impact.`,
     linkedin: "https://www.linkedin.com/in/andrefug",
     current: true,
     year: 2027,
@@ -59,7 +59,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "andreas-staune-mittet-1004",
     name: "Andreas Staune-Mittet",
-    description: "",
+    description: `From the brutal climbs of professional cycling to the steep learning curves of startups, Andreas thrives on resistance. A proud Lillehammer local, born in 1998, he spent his early adult years shaving his legs and chasing finish lines, eventually securing a silver medal at the Norwegian U23 National Championship. But when he parked the bike professionally, he realized the adrenaline of the peloton could be found elsewhere.\n\nCuriosity led him to study Political Science for a year, but a hunger to understand people and team dynamics pulled him towards a Bachelor's in Organizational Psychology at BI. Along the way, he explored every corner of the game: from cold-calling billionaires, coaching, podcasting, to working as an agent. Simultaneously, he became a familiar voice to many as a commentator for Warner Bros. Discovery, covering events like the Tour de France and the Olympics.\n\nDespite his individual drive, Andreas knows you don't win the Tour de France alone. He operates on the philosophy that true success happens when you work to make those around you better.\n\nNow at NTNU's School of Entrepreneurship, Andreas is on a mission to apply the dedication of elite sports to building the companies of tomorrow. He learned early on that grit yields results, and with a solid foundation in leadership, he brings a competitive and caring mindset to every project he touches.`,
     linkedin: "https://www.linkedin.com/in/andreas-staune-mittet",
     current: true,
     year: 2027,
@@ -70,7 +70,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "anna-elise-rikardsen-jaatun-1005",
     name: "Anna Elise Rikardsen Jaatun",
-    description: "",
+    description: `Anna grew up in Nordreisa, a small town in the northernmost part of Norway. Surrounded by beautiful nature, she spent most of her childhood skiing, running in the mountains, and playing football.\n\nFor Anna, working towards her goals and challenging herself has always been an important part of her upbringing. Biathlon played a major role in her life throughout her teenage years. The sports' demand for hard work, discipline, and routine have shaped her and continue to influence her today.\n\nWhen choosing an education, she had one clear goal: to prove that anyone could pursue a master's degree in engineering. After studying Communication Technology and Digital Security at NTNU for three years, she felt she needed a greater challenge and realized she wanted to embark on a new path; becoming an entrepreneur.`,
     linkedin: "https://www.linkedin.com/in/anna-elise-rikardsen-jaatun",
     current: true,
     year: 2027,
@@ -81,7 +81,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "anna-hammer-1006",
     name: "Anna Hammer",
-    description: "",
+    description: `Born in 2001 and raised on a farm in the small village of Gjerdrum, Anna has always thrived in environments with multiple responsibilities and parallel projects. She began her academic journey by studying Marketing Management at BI in Trondheim, where she quickly realized that her passion for learning extended far beyond traditional coursework. Combining theory with hands-on experience became a natural priority, and she found strong motivation in taking on responsibility and learning through practical engagement.\n\nThroughout her studies, Anna has actively sought roles that challenge her and allow her to grow. She has held several positions in student organizations, including Social Media Manager in the marketing team for UKA-23 and Internal Coordinator in the board of Samfundet's concept and project development group.\n\nAnna is driven by a strong desire to learn, improve, and push boundaries. She lives by the belief that "life begins outside the comfort zone," and sees entrepreneurship as the ideal arena to continuously challenge herself, both professionally and personally. What motivates her most is building companies that are sustainable in the long term, without limiting growth or ambition.\n\nEnergetic and deeply engaged, Anna brings a contagious enthusiasm to the people and projects she is involved in. At NTNU's School of Entrepreneurship, she aims to develop the skills, mindset, and experience needed to build impactful ventures that last.`,
     linkedin: "https://www.linkedin.com/in/anna-hammer-64aaa2253",
     current: true,
     year: 2027,
@@ -92,7 +92,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "aurora-lyng-1007",
     name: "Aurora Lyng",
-    description: "",
+    description: `Aurora grew up in Oslo and began her journey in nursing after high school. Along the way, she discovered a strong interest in innovation within the healthcare sector, which led her to pursue a bachelor's degree in Computer Science. Fascinated by how technology and smart solutions can improve healthcare, Aurora found her passion at the intersection of health and innovation.\n\nWith interests that extend beyond the healthcare sector, Aurora is curious about challenges across a wide range of fields, from healthcare to environmental issues. Exploring problems in different industries sparked her ambition to become an entrepreneur. Joining NTNU's School of Entrepreneurship therefore felt like a natural next step, offering both the strong skillset and the network needed to turn ideas into impactful ventures.`,
     linkedin: "https://www.linkedin.com/in/anne-kristine-eiane",
     current: true,
     year: 2027,
@@ -103,7 +103,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "bendik-bjorge-furnes-1008",
     name: "Bendik Bjørge Furnes",
-    description: "",
+    description: `Bendik grew up surrounded by the sea, fishing, and a concerning amount of fuel burned on his inflatable boat along the Norwegian coast. During his teenage years, he moved closer to Bergen, where a growing fascination with the music industry began to take shape.\n\nHe holds a bachelor's degree in Music Business Management and has experience in B2B sales, leadership, and entrepreneurship. Bendik is particularly interested in business development, strategy, and industries in transition.\n\nThis year's music recommendation: Illegal by PinkPantheress.\n\n+47 926 37 066\nBendikfurnes@gmail.com`,
     linkedin: "https://www.linkedin.com/in/bendikfurnes",
     current: true,
     year: 2027,
@@ -114,7 +114,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "daniel-kjole-skogland-1009",
     name: "Daniel Kjøle Skogland",
-    description: "",
+    description: `Daniel grew up in small town just south of Oslo in Norway with a strong curiosity for how things work—and how they can be made better. He's driven by building, problem-solving, and pushing ideas from concept to reality. Early on, he became fascinated by technology's ability to reshape entire industries, especially where engineering meets real-world impact.\n\nThis led him to NTNU, where he pursued a master's degree in engineering and immersed himself in technically demanding projects. Along the way, Daniel gravitated toward robotics and industrial applications, drawn to challenges that require both mechanical insight and systems thinking. He thrives in environments where ambitious ideas are tested fast and assumptions are challenged.\n\nDuring his studies, Daniel founded Cortex Robotics, a company developing pipe-climbing robots to simplify and improve inspection of industrial infrastructure. Building a deep-tech startup alongside his education gave him hands-on experience with everything from product development and prototyping to strategy and fundraising—and confirmed that entrepreneurship is where he does his best work.\n\nNow at NTNU's School of Entrepreneurship, Daniel is focused on turning advanced technology into scalable companies. He's motivated by building things that matter, working with sharp people, and creating companies with the potential to last.`,
     linkedin: "https://www.linkedin.com/in/daniel-kjoele-skogland-b777b5262",
     current: true,
     year: 2027,
@@ -125,7 +125,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "deserie-divino-1010",
     name: "Deserie Divino",
-    description: "",
+    description: `Born and raised in the Philippines, Deserie moved to Norway alone as a first-generation immigrant, driven by a strong desire for growth, opportunity, and impact. She holds a Bachelor's degree in Medical Laboratory Science and is a certified biomedical scientist, with professional licenses in three countries. She grew up volunteering and supporting underprivileged communities, which shaped her strong sense of social responsibility and purpose.\n\nHer move to Norway meant starting again. She retook studies, learned a new language, and gained practical experience in a new professional environment. She is not afraid of trying new things or stepping into unfamiliar situations. She enjoys exploring new cultures and perspectives. International experiences such as humanitarian-focused cultural exchange in Japan, volunteer work with a hospital in Vietnam, and backpacking across Southeast Asia and Australia shaped her global outlook. Two years after moving to Norway, she chose NTNU School of Entrepreneurship to turn lived experience into action and develop solutions with real world impact.\n\nBeyond her professional background, Deserie is a creative and people-driven individual with a strong love for photography, cinematic storytelling, and content creation. She enjoys hiking and scuba diving, often finding inspiration in nature and by the ocean. Guided by a commitment to human centered solutions, her ambition is to build ventures that empower people and contribute to a more inclusive world.`,
     linkedin: "https://www.linkedin.com/in/desdivino/",
     current: true,
     year: 2027,
@@ -136,7 +136,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "emil-langeland-1011",
     name: "Emil Langeland",
-    description: "",
+    description: `Emil is an ambitious man, born in Førde and raised in Gjerdrum. He's a teacher and an economist who loves learning, building and chasing experience. True adventures happen on the inside! And the idea of getting a master's degree while building companies at the same time gives him all the motivation he needs to get the job done.\n\nAt NTNU's School of Entrepreneurship, Emil is becoming the best entrepreneur he can be. His goal is to build an organization that brings people together and sees them as whole human beings. For Emil, doing good and doing well belong in the same sentence: he wants to create real value, earn well and use every resource in his toolbox to help the people around him become the best version of themselves, while making his mom and dad proud along the way.\n\nRight now, he's already getting hands-on experience as CFO an co-founder in two early-stage companies, one in sustainability and one in the aquaculture industry. He works with accounting, helps raise capital, and is the first to admit he's still in the early days. What matters is the mindset: staying creative, structured, dedicated and honest while learning fast.\n\nOutside of work, you'll likely find him at the poker table or in the kitchen cooking something great for people he cares about. Emil's approach to life and entrepreneurship is simple:\nYou learn as you go, so you better start walking.`,
     linkedin: "https://www.linkedin.com/in/emil-langeland-96746a243",
     current: true,
     year: 2027,
@@ -147,7 +147,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "emil-moberg-vaernes-1012",
     name: "Emil Moberg Værnes",
-    description: "",
+    description: `Emil is a software developer, designer, and entrepreneur who builds digital products at the intersection of technology, data, and design. He works across the full stack, from early concept and user experience to robust backend systems, automation, and applied AI.\n\nHis work is driven by a product-first mindset: understanding real problems, designing simple solutions, and turning them into scalable software. Emil has experience building both custom systems and reusable platforms, often focusing on tools that reduce complexity, improve workflows, or enable better decision-making.\n\nWith a strong interest in software entrepreneurship, Emil combines technical depth with strategic thinking, drawing on principles from lean product development, systems thinking, and iterative experimentation. He values clarity, long-term maintainability, and thoughtful design, and is motivated by creating products that are useful, durable, and well-crafted.\n\nRead more at www.emilmoberg.com`,
     linkedin: "https://www.linkedin.com/in/emilmoberg",
     current: true,
     year: 2027,
@@ -158,7 +158,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "emilia-weisser-eide-1013",
     name: "Emilia Weisser Eide",
-    description: "",
+    description: `Meet Emilia. She grew up by the ocean in Oslo. In her early years, she dreamed of becoming a hairdresser, a football player, or an architect. Ever since childhood, Emilia has been curious about the world around her, a trait that still defines her today.\n\nLater, she discovered YouTube, and her fascination with technology began to grow. This interest led her to pursue a bachelor's degree in Interaction Design at the University of Bergen. She enjoyed the combination of programming and design and found it challenging to choose which direction to pursue further: design and creativity, or programming and theory? Emilia wrote her bachelor's thesis on the interplay between interaction design and business development, which ultimately led her to ES.\n\nAt ES, Emilia aims to form a team that stands together through any challenge and shares a common interest in technology, creativity, and building solutions that truly matter.`,
     linkedin: "https://www.linkedin.com/in/emilia-weisser-eide-a8a454306/",
     current: true,
     year: 2027,
@@ -169,7 +169,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "henrik-hellum-1014",
     name: "Henrik Hellum",
-    description: "",
+    description: `Henrik grew up in a small village outside Oslo, in a little valley filled with horses, tractors, and snow groomers. Despite being a true farm boy at heart, he has nevertheless chosen the path of an entrepreneur. He began performing at an early age, and with hits like "Kan det bli du og jeg" (MGPjr 2015) and his convincing portrayal of Noa in the series Jenter (NRK Super, 2013), he has charmed audiences all across Norway.\n\nFor the past four years, Henrik has studied industrial design and dedicated the remaining hours of the day to Studentersamfundet i Trondheim, where he for two years served as the foreman of Trondhjems Studentersangforrening. In his projects, Henrik aims to contribute through diligence, clarity, and strong moral ambition. Through his work, he strives to create meaningful impact in the world.`,
     linkedin: "https://www.linkedin.com/in/henrik-hellum-85a31a229",
     current: true,
     year: 2027,
@@ -202,7 +202,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "laura-mozeryte-1017",
     name: "Laura Mozeryte",
-    description: "",
+    description: `Born in 2002 and raised in Egersund, she has always been drawn to challenge and exploration. Seeking new perspectives, she moved to New York to pursue a business degree in Data Analytics and Finance. There, she learned to navigate high-pressure, fast-moving environments while adapting to constant change.\n\nLaura's curiosity extends beyond academia into real-world challenges and exploration. She has climbed Mont Blanc and trekked to the summit of the active Acatenango volcano in Guatemala. These experiences reflect her love for adventure and resilience. Her multicultural background has further shaped her global outlook and passion for travel, art, and understanding people across cultures.\n\nDriven by curiosity, adventure, and the joy of solving complex problems in ever-changing contexts, Laura sees entrepreneurship as the ideal way to turn ideas into impact while continuously learning, adapting, and creating value.`,
     linkedin: "",
     current: true,
     year: 2027,
@@ -213,7 +213,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "linea-rugsveen-1018",
     name: "Linea Rugsveen",
-    description: "",
+    description: `Linea has a background in logistics engineering and has long been driven by entrepreneurship. She thrives in close collaboration with other ambitious people, especially in fast-paced environments with high expectations. Being pushed, particularly on speed and execution is something that motivates and energizes her.\n\nShe naturally takes responsibility, both for people and for structure. She is driven by a desire to shape her own future and to build something that extends beyond herself.\n\nLinea grew up in Drøbak, and has always tended to think big and view life with a sense of ambition and optimism. With parents who have demonstrated what long-term dedication and hard work can achieve, ambition and discipline became a natural part of her upbringing. Joining the School of Entrepreneurship therefore felt like a natural step, something she had known for a long time she wanted to pursue.\n\nShe sets high standards for herself and places strong emphasis on quality in everything she delivers. She finds the entrepreneurial environment inspiring and motivating, and looks forward to exploring what the future holds.`,
     linkedin: "",
     current: true,
     year: 2027,
@@ -224,7 +224,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "malene-vatnoy-1019",
     name: "Malene Vatnøy",
-    description: "",
+    description: `Born and raised in Bergen, Malene is driven by curiosity and the desire to improve people's lives. She holds a Bachelor's degree in Communication and Media Production, where she developed skills in storytelling, digital media, and creative problem-solving.\n\nOpen-minded and resilient, Malene thrives on new experiences, challenges, and turning everyday inspiration into meaningful action. After her studies, she chose NTNU School of Entrepreneurship to transform her creativity and ideas into ventures that benefit society and empower individuals.\n\nGuided by values of love, courage, and adventure – her ambition is to build solutions that foster authentic living, deeper connection, and a more supportive world.\n\nmalenejv@hotmail.no / +47 908 71 848`,
     linkedin: "",
     current: true,
     year: 2027,
@@ -235,7 +235,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "malin-nupen-1020",
     name: "Malin Nupen",
-    description: "",
+    description: `Growing up in Kristiansand, Malin has always been curious about the world and about who she could become. From an early age, she imagined many possible futures, driven by a genuine interest in understanding how things work and expanding her ways of thinking.\n\nInspired early on by her father's passion for the environment, Malin began her academic journey in renewable energy engineering. While the field resonated with her values, she eventually felt the urge to explore new sides of herself. Studying TV and film production became a conscious decision to challenge herself, engage with a long-standing interest in the film industry, and test her ability to grow outside her comfort zone. Over time, this exploration naturally led her toward entrepreneurship as a way to turn curiosity into action. At NTNU's Entrepreneurial School, she is drawn to working alongside engaged, like-minded people and building something meaningful from the ground up with the ambition to make it last.`,
     linkedin: "https://www.linkedin.com/in/malin-nupen-513a071a0",
     current: true,
     year: 2027,
@@ -246,7 +246,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "martin-nguyen-1021",
     name: "Martin Nguyen",
-    description: "",
+    description: `Raised by immigrant parents from Vietnam, Martin learned the values of hard work, dedication, and passion from an early age. This background has shaped him into someone who never does anything halfway, a trait confirmed by previous employers who describe him as "one of the absolute best employees" they have ever worked with.\n\nWith a Bachelor's degree in Digital Business Development as his foundation, he lives by the principle of Kaizen; continuous improvement. He carried this mindset into his role as Chairman of the Board for the nationwide organization Norges Unge Katolikker. Here, he was recognized as a "conscientious and skilled leader" who is "focused, structured, and innovative" in his work.\n\nMartin's introduction to Trondheim's innovation ecosystem came through Start NTNU, where he found a true sense of belonging. This, combined with his strong interest and passion for building communities, made the School of Entrepreneurship a natural choice. Leveraging what has been described as his "natural leadership qualities and entrepreneurial skills," he is ready to turn adversity into success. The goal is clear: Martin wants to make a real impact for others!\n\nmnguyen1905@gmail.com / +47 47675666`,
     linkedin: "https://www.linkedin.com/in/martinnguyeen",
     current: true,
     year: 2027,
@@ -257,7 +257,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "matilde-ytre-eide-bjaarstad-1022",
     name: "Matilde Ytre-Eide Bjaarstad",
-    description: "",
+    description: `Matilde grew up in Nordre Follo and has been involved in sports throughout her life, with a particular focus on handball. When she began studying nursing, she developed a strong interest in health promotion, with a special emphasis on the concept of empowerment. She also participated in an exchange program in Tanzania, where she experienced how meaningful change can be created with limited resources. This experience became a key source of inspiration for Matilde, who later worked at the student welfare organization in Trondheim. In addition, she is actively involved in NTNUI and thrives in an environment centered around sports and physical activity.`,
     linkedin:
       "https://www.linkedin.com/in/matilde-ytre-eide-bjaarstad-14917132b",
     current: true,
@@ -269,7 +269,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "mats-burud-skjolsvold-1023",
     name: "Mats Burud Skjølsvold",
-    description: "",
+    description: `Mats grew up in Oslo and moved away from home at the age of 15 to pursue his dream of becoming a competitive cross-country skier. He committed fully to cross-country skiing until 2021 alongside his studies, an experience that shaped his strong discipline, work ethic, and competitive mindset. After shifting his focus toward becoming an engineer, he moved to Trondheim in 2022.\n\nAlongside his studies in Trondheim, Mats has worked and been an active member of the NTNUI rowing team. In his first year, he won two gold medals at the Norwegian Student Games, both individually and in relay events, and the same year he was part of the first team that won bronze at the Norwegian Indoor Rowing Championships.\n\nMats is a highly motivated person with strong work capacity, driven by a desire to perform at the highest possible level. One of his key strengths is discipline, combined with the ability to recognize and understand others and their needs in order to perform well. He is motivated by competition and delivering strong results, while equally valuing close collaboration toward shared goals. He hopes to contribute to a forward-leaning and ambitious environment.\n\nContact info: +47 93217846, mats.burud@gmail.com`,
     linkedin: "https://www.linkedin.com/in/mats-burud-skjolsvold",
     current: true,
     year: 2027,
@@ -280,7 +280,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "michela-wilhelmsen-1024",
     name: "Michela Wilhelmsen",
-    description: "",
+    description: `Michela grew up in Oslo and Sicily, a combination that shaped her into an energetic, curious, and adventurous person. She has always loved being active, and from an early age she started working as a part-time gymnastics' instructor, a job she adored for its dynamic environment and the joy of helping others push their limits.\n\nHer interest in technology began in high school, where an Informatics class sparked her curiosity for digital systems. After graduating, Michela moved to Bergen to study Interaction Design at UIB, without fully knowing what UX/UI even meant at the time. It turned out to be one of the best decisions she ever made. She quickly discovered a deep passion for creating fast, accurate, and user-friendly digital experiences. During her years in Bergen, Michela became a teaching assistant, which strengthened her communication skills and her interest in the academic side of design. She also participated twice in the Lifelogging Search Challenge with her system VitaChronicle, publishing two research papers on ACM. Her first challenge participation took her all the way to Thailand, and her second entry was ranked among the best systems in the competition, fuelling her passion for precision and high-performance digital design. For her bachelor project, Michela co-developed an interactive learning platform for the University of Bergen. After the course ended, the university chose to continue supporting the project, allowing her to keep working on it, travel back to Bergen, and even present it at the university's Innovation Days.\n\nOutside her studies, Michela loves to travel and explore the world. She spent a semester on exchange in Melbourne, Australia, and has taken every opportunity to experience new cultures and environments. Her journey in design and technology ultimately led her to Trondheim and the NTNU School of Entrepreneurship. Michela is eager to continue developing solutions that bring stronger focus to interaction design in a rapidly evolving tech landscape, always prioritizing usability, speed, accuracy, and effective system development. She is excited to contribute her energy, curiosity, and passion for design to ES and to the ventures she will help build.\n\n+47 938 77 222\nmichela.wilhelmsen@gmail.com`,
     linkedin: "http://linkedin.com/in/michela-wilhelmsen",
     current: true,
     year: 2027,
@@ -291,7 +291,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "mina-bergskaug-1025",
     name: "Mina Bergskaug",
-    description: "",
+    description: `Mina is a social, positive and caring person who gains energy from being around others. Growing up close to nature in Oslo, she took part in a wide range of sports that taught her the value of teamwork. Alongside school, Mina worked from a young age, building a strong work ethic and skills in sales and customer interaction. In high school, she led a student company, which sparked her passion for entrepreneurship.\n\nAfter two gap years that included both military service and backpacking, Mina began her studies and moved to Trondheim to fully embrace student life. While studying Business Administration at NTNU Handelshøyskolen, she actively explored NTNU's innovation ecosystem. Her role at Boost Henne NTNU allowed her to join the innovation community while inspiring more women to pursue entrepreneurship and become founders.\n\nToday, Mina hopes to inspire even more women by pursuing entrepreneurship herself. She is deeply committed to teamwork and driven by a desire to make the world a better place, one step at a time. Now, she feels exactly where she belongs: at NTNU's School of Entrepreneurship. She is incredibly excited about the coming years!\n\nContact info: +47 46684001, mina.bergskaug@gmail.com`,
     linkedin: "http://linkedin.com/in/mina-bergskaug-75a65124a",
     current: true,
     year: 2027,
@@ -302,7 +302,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "minh-kenny-nguyen-1026",
     name: "Minh Kenny Nguyen",
-    description: "",
+    description: `Minh Kenny strives to be an ordinary, casual guy. He grew up in Stovner, on the east side of Oslo where ambition is quiet and sweatpants are socially acceptable. One of his biggest dreams is actually to give a TED Talk while wearing sweatpants.\n\nWith a background in Industrial Economics and Technology Management, he proudly learned how to be a nerd. During his time as a student, he fell into countless rabbit holes, exploring entrepreneurship, astronomy, philosophy, design, technology, business, and various other buzzwords that sound impressive but are hard to define.\n\nHe strongly believes in the principle of Ikigai: the idea that purpose lives at the intersection of doing what you love, what you're good at, what creates value, and what the world needs. He's still navigating that intersection hopefully by building a startup with ambitious people, obsessively living in the product, talking to users, sweating the details, and earning progress one unscalable step at a time as early-stage startups should.\n\nStill figuring things out. Still curious. Sweatpants optional :)`,
     linkedin: "https://www.linkedin.com/in/minh-kenny-nguyen-39144b170",
     current: true,
     year: 2027,
@@ -324,7 +324,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "nikolay-hiller-klausen-1028",
     name: "Nikolay Hiller Klausen",
-    description: "",
+    description: `Nikolay has a background in Materials Science and Engineering, specializing in mechanical and maritime applications. He's passionate about hardware, deep-tech, and ambitious problems. During his studies of how materials work, he also lead the mechanical team at Orbit NTNU, designing and assembling satellites including FramSat and BioSat. Worked 2 years as a tanker in the military. Late-night CAD enjoyer.\n\nCurious for more? Call: +47 92411171.`,
     linkedin: "http://linkedin.com/in/nikolayklausen",
     current: true,
     year: 2027,
@@ -335,7 +335,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "nora-heradstveit-1029",
     name: "Nora Heradstveit",
-    description: "",
+    description: `- Grew up in the rainy city of Bergen.\n- Always had an interest in fashion and how to express yourself through it\n- Love the Norwegian nature and mountains\n- Worked since I was 16 - like to keep busy\n- Driven by goals: always have something to strive for\n- When I heard about ES I quickly realized that this was something I wanted to do: learn to move out of my comfort zone\n- With two parents who are entrepreneurs, I hope to be the next in line!`,
     linkedin: "http://linkedin.com/in/nora-lita-heradstveit-6879202b0",
     current: true,
     year: 2027,
@@ -346,7 +346,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "nora-solhoi-tvete-1030",
     name: "Nora Solhøi Tvete",
-    description: "",
+    description: `Nora grew up in Fredrikstad with a strong curiosity about the world and how ideas are turned into action.\n\nShe holds an MA (Hons) in Politics from the University of Edinburgh, where an international environment shaped her interest in leadership and impact. At 14, she launched and ran her first entrepreneurial venture, Hakan Kiosk. It was an independently operated kiosk focused on local products, where she gained hands-on experience in building and running a business.\n\nNora later co-founded Women2Women Norway, a leadership and networking initiative for young women. Now at NSE, she is particularly interested in building sustainable, value-driven companies that combine commercial thinking with long-term societal impact.\n\n+47 413 61 938 / noratvete@gmail.com`,
     linkedin: "https://www.linkedin.com/in/noratvete",
     current: true,
     year: 2027,
@@ -368,7 +368,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "olav-sie-1032",
     name: "Olav Sie",
-    description: "",
+    description: `Olav Sie is from Drammen and is currently pursuing a master's degree in Computer Science alongside his studies at the School of Entrepreneurship. He has previously completed a one-year program in Philosophy, which has shaped his analytical thinking and ability to approach complex problems from multiple perspectives. Curious and driven by a desire to learn, Olav actively seeks out new challenges and opportunities beyond his core studies. Alongside his education, he brings a reflective and interdisciplinary mindset that bridges technology, entrepreneurship, and human-centered thinking.`,
     linkedin: "https://www.linkedin.com/in/olav-sie-rotv%C3%A6r-b528112a4",
     current: true,
     year: 2027,
@@ -379,7 +379,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "ole-fjeld-haugstvedt-1033",
     name: "Ole Fjeld Haugstvedt",
-    description: "",
+    description: `Ole is a cheerful, social and chill creature who always has a playful reply at hand. Raised in Bergen, he embraces the stereotype with a cheeky remark and a glimmer in his eye. With a background in sports and a bachelor's degree in electrical engineering, Ole thrives in ambitious teams working towards a common goal. He keeps his calm when others stress, often acting as the human equivalent of a deep breath.\n\nOutside of work, he enjoys a bit of everything, with a special interest in music and culture, and rarely limits himself to one box. He values shared experiences over careful planning and, ambitious and curious by nature, is not afraid to take risks, jump into the unknown, and figure things out along the way. This laid-back yet driven mindset shapes both how he works and how he lives.`,
     linkedin: "https://www.linkedin.com/in/ole-fjeld-haugstvedt",
     current: true,
     year: 2027,
@@ -412,7 +412,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "sandra-ronquist-slattelia-1037",
     name: "Sandra Rønquist Slåttelia",
-    description: "",
+    description: `Born to sail, forced to build an empire.\n\nAdditional info upon request, contact:\n+47 41465012, sandraslattelia@gmail.com`,
     linkedin: "",
     current: true,
     year: 2027,
@@ -423,7 +423,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "sara-marsdal-1038",
     name: "Sara Marsdal",
-    description: "",
+    description: `Sara grew up in the north in a town called Alta. She has always been creative and in search of something more. When she was applying for studies, she never really knew what she wanted to study, and always felt uneasy about whether she had "made the right choice". ES therefore became a natural choice, as it gave her the freedom to work with what her gut told her.`,
     linkedin: "https://www.linkedin.com/in/sara-amundsen-marsdal-638942254",
     current: true,
     year: 2027,
@@ -456,7 +456,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "thea-duus-rosten-1041",
     name: "Thea Duus Røsten",
-    description: "",
+    description: `Meet Thea, born in 2001 and raised in Bærum. Thea grew up with a competitive mindset and a drive to push her own limits. From a young age, sport played a central role in her life, and she spent several years as a top-level athlete in kayaking, representing Norway on the national team. Through elite sports, she developed discipline, resilience, and a strong belief in long-term commitment — qualities that still define how she approaches challenges today.\n\nAfter high school, Thea chose to pursue a bachelor's degree in training, health, and performance at Norwegian School of Sport Sciences. Through her studies and practical experience within physical activity, health promotion, and coaching, she developed a deep interest in the health side of performance. Still, something felt missing. She enjoyed understanding people and systems, but wanted to work closer to ideas, impact, and change. This curiosity led her into entrepreneurship.\n\nDuring an exchange year in Australia, things became clearer. Thea took courses in entrepreneurship as well as leadership and confidence-building for women, which challenged her perspective and pushed her outside her comfort zone. These experiences strengthened her self-belief and helped her realize that entrepreneurship offered the freedom, ownership, and pace she was looking for.\n\nNow at NTNU School of Entrepreneurship, Thea has found the environment she had been searching for — a place where ambition is encouraged, teamwork is intense, and long days feel meaningful. With a background from elite sports, a strong foundation in health, and a clear entrepreneurial mindset, she's ready to build something that matters.`,
     linkedin: "https://www.linkedin.com/in/thea-duus-r%C3%B8sten-0b09a9323",
     current: true,
     year: 2027,
@@ -467,7 +467,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "thea-eng-brenden-1042",
     name: "Thea Eng Brenden",
-    description: "",
+    description: `Growing up at Nesodden, a place known for creative minds, Thea developed curiosity, creativity, and a love for challenges early on.\n\nShe thrives on stepping out of her comfort zone and pushing her limits. Driven to make a difference, she became a nurse, passionate about helping others. Yet she felt something was missing. In her final year of nursing school, Thea attended an innovation camp, where creativity, impact, and problem-solving finally came together. She realized this was exactly what she wanted to do.\n\nSince then, she has contributed to Engage NTNU, DrivNTNU, CapaCare Norway and supported engineers developing healthcare solutions. She also hosts a podcast, sharing insights about entrepreneurship and change in healthcare, aiming to inspire other health professionals to embrace innovation.\n\nAt NSE, Thea thrives in an environment surrounded with ambitious, creative and like-minded people. She embraces teamwork and challenges, using her curiosity, big heart, and ability to build strong relationships to create real impact.`,
     linkedin: "http://linkedin.com/in/thea-eng-brenden-8b8717325",
     current: true,
     year: 2027,
@@ -478,7 +478,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "thusika-velalakan-1043",
     name: "Thusika Velalakan",
-    description: "",
+    description: `Thusika comes from the entrepreneurial community of Stryn, where she grew up surrounded by high mountains and beautiful landscapes. Her parents are from Sri Lanka, and the blend of Norwegian and Tamil cultures has strongly shaped her values and perspectives. She inherited resilience and optimism from parents who started a new life in Norway on their own.\n\nBalancing part-time jobs and twelve years of handball, she developed discipline, teamwork, and a strong work ethic. These experiences guided her toward engineering, and at 19 she moved to Oslo to pursue a bachelor's degree in Energy and Environmental Engineering in Buildings.\n\nDuring her studies, she discovered a passion for developing innovative ideas that drive sustainable solutions. Her experience with the youth enterprise MultiFlask UB further fueled her interest in creating and growing her own projects, which led her to apply to the Entrepreneurship School.\n\n"My goal is to inspire others to pursue their ambitions. I believe that if a dream exists in your mind, it is because you have the potential to turn it into reality."\n\nPlease feel free to contact Thusika at:\nEmail: Thusikasonja@hotmail.com\nPhone: +47 481 57 321`,
     linkedin: "https://www.linkedin.com/in/thusika-sonja-velalakan-73364b2b4",
     current: true,
     year: 2027,
@@ -489,7 +489,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "tommy-nguyen-1044",
     name: "Tommy Nguyen",
-    description: "",
+    description: `Tommy was born and raised in Trondheim and has a background in electrical engineering, specializing in power systems and sustainable energy. He thrives on exploring new ideas and challenging himself, and over the past year has deliberately leaned into this mindset by seeking what is out there and expanding his skill set beyond his core studies. Alongside his education, he has been actively involved in Klubbstyret at Samfundet, combining technical insight with people skills in ways that are useful.\n\nParallel to NSE, he has been a steady bedrock for the team at Livid Trondheim since joining. He also works at Tomatosharp as a creative soul and knife sharpener, and has launched Artefakt Uniform, a personal portfolio website documenting his work in self made clothing design.\n\nMotivated by entrepreneurship and the freedom that comes with building something from scratch, Tommy is driven by the idea of creating solutions, experiences, and systems that stand the test of time. He draws inspiration from his favorite entrepreneur, Mark Cuban, and strongly relates to his grounded view on success: "If you're happy when you're poor, you're gonna be happy when you're rich."\n\nLive, Love, Laugh`,
     linkedin: "https://www.linkedin.com/in/tommyngonguyen/",
     current: true,
     year: 2027,
@@ -500,7 +500,7 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "vani-khandelwal-1045",
     name: "Vani Khandelwal",
-    description: "",
+    description: `Vani has an Indian/Norwegian background, and was born and raised in Stavanger. She has always been a curious and creative person, driven by a desire to understand the world and challenge how things are done. In high school, this curiosity led her to forskerlinjen, where she specialized in science and technology. Alongside her academic interests, she spent several years attending art school, which further shaped her creative drive. After a year of hiking and self-reflection at Trondheimsfjord Folkehøyskole, she finally decided to pursue a degree in law at the University of Bergen.\n\nDuring her legal studies, Vani became deeply engaged in questions of justice, and went on to lead a law-based organization dedicated to preventing discrimination and promoting diversity. Over time, she realized that she was most energized by creating, improving, and challenging established norms. That's why, after completing her degree and qualifying as a lawyer, she chose to take a new direction by joining the NTNU School of Entrepreneurship.\n\nThis has proven to be a perfect fit, as entrepreneurship allows her to combine creativity, problem solving, and ambition with a drive to build meaningful solutions. She is excited about the opportunities ahead, and the journey of turning abstract ideas into real impact.\n\nFeel free to contact her at:\nVanikhandelwal00@gmail.com or https://www.linkedin.com/in/vanikhandelwal`,
     linkedin: "https://www.linkedin.com/in/vanikhandelwal",
     current: true,
     year: 2027,

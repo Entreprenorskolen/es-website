@@ -13,6 +13,7 @@ export const STARTUP_VALUES: SelectObject[] = [
 
 export const CURRENT_YEARS: string[] = ["2027", "2026"];
 export const ALUMNI_YEARS: string[] = [
+  "2025",
   "2024",
   "2023",
   "2022",
