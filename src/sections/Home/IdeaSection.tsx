@@ -63,7 +63,7 @@ const IdeaSection = ({ content }: IdeaSectionProps) => {
 
         <form
           className="w-11/12 md:w-1/3 flex flex-col gap-4 p-6 border border-gray-200 rounded-xl shadow-lg bg-white mx-4 md:mx-0"
-          action="mailto:ingrid.b.sivertsen@ntnu.no"
+          action="mailto:sara.m.h.storoy@ntnu.no"
           method="post"
           encType="text/plain"
         >
