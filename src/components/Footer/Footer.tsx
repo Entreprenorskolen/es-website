@@ -96,9 +96,6 @@ const Footer = ({ footerData }: FooterProps) => {
               <h3 className="font-semibold text-sm sm:text-base mb-2">
                 {footerData?.contactTitle || "Kontakt"}
               </h3>
-              <p className="text-gray-600 text-sm sm:text-base">
-                {footerData?.phoneNumber || "+47 73 59 36 09"}
-              </p>
               <Link
                 href={`mailto:${footerData?.email || "es.rekruttering@iot.ntnu.no"}`}
                 className="text-gray-600 hover:text-gray-900 text-sm sm:text-base inline-block"
