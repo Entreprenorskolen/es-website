@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { HomePage } from "@app/types";
 import {
   HeaderSection,
@@ -47,12 +46,14 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col mt-20">
-      <Link
-        href="/sok"
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfvNpko4c9auRxtF3fOBTqNN7LOC5gfJkh6uYDti8Ld8uq2HQ/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
         className="block w-full text-[#002B4E] text-center py-2 px-4 font-semibold hover:underline transition-colors"
       >
-        📍 Informasjonsmøte 4. og 5. mars — Les mer og søk her →
-      </Link>
+        📩 Skriv deg på ventelisten for neste opptak →
+      </a>
 
       {/* ✅ Updated Header Section with CTA */}
       <HeaderSection

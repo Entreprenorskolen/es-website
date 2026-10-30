@@ -335,13 +335,13 @@ export const STUDENTS_DATA: StudentData[] = [
   {
     id: "nora-heradstveit-1029",
     name: "Nora Heradstveit",
-    description: `- Grew up in the rainy city of Bergen.\n- Always had an interest in fashion and how to express yourself through it\n- Love the Norwegian nature and mountains\n- Worked since I was 16 - like to keep busy\n- Driven by goals: always have something to strive for\n- When I heard about ES I quickly realized that this was something I wanted to do: learn to move out of my comfort zone\n- With two parents who are entrepreneurs, I hope to be the next in line!`,
+    description: `If there's a will, there's a way. Contact: nora.heradstveit@gmail.com`,
     linkedin: "http://linkedin.com/in/nora-lita-heradstveit-6879202b0",
     current: true,
     year: 2027,
     image: "/images/students/Nora_Heradstveit_1029.jpg",
     createdAt: "2025-12-11T00:00:00Z",
-    updatedAt: "2025-12-11T00:00:00Z",
+    updatedAt: "2026-10-30T00:00:00Z",
   },
   {
     id: "nora-solhoi-tvete-1030",
