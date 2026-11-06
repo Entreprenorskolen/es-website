@@ -71,6 +71,26 @@ export const FACULTY_MEMBERS_DATA: FacultyMemberData[] = [
     createdAt: "2024-03-10T22:05:01Z",
     updatedAt: "2025-03-10T15:42:59Z",
   },
+  {
+    id: "0a48441e-d49c-4351-aa4d-368e7595c447",
+    name: "Elise Høvik",
+    title: "Assistant Professor",
+    bio: "Elise Høvik er utdannet sykepleier og har en master fra NTNUs Entreprenørskole. Hun jobber nå som universitetslektor ved Entreprenørskolen og veileder studentene ved ES både i akademiske oppgaver, men også i forbindelse med deres oppstartsselskaper.\n\nSom student selv hadde hun et stort engasjement for kvinnelig gründerskap, spesielt gjennom lederverv i Boost Henne NTNU.",
+    isEnglish: false,
+    image: "/images/faculty/elise_hovik.jpg",
+    createdAt: "2026-11-06T00:00:00Z",
+    updatedAt: "2026-11-06T00:00:00Z",
+  },
+  {
+    id: "5ad1278e-4387-43ff-ac75-c30b92e69692",
+    name: "Sara Storøy",
+    title: "",
+    bio: "Sara Storøy",
+    isEnglish: false,
+    image: "/images/faculty/sara_storoy.jpg",
+    createdAt: "2026-11-06T00:00:00Z",
+    updatedAt: "2026-11-06T00:00:00Z",
+  },
 ];
 
-export const FACULTY_MEMBERS_COUNT = 7;
+export const FACULTY_MEMBERS_COUNT = 8;

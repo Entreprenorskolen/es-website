@@ -16,6 +16,8 @@ const facultyOrder = [
   "Dr. Dag Håkon Haneberg",
   "Ingrid (Oline) Berg Sivertsen",
   "Besart 'Bess' Olluri",
+  "Elise Høvik",
+  "Sara Storøy",
 ];
 
 export const FacultyMembers = ({ facultyMembers }: FacultyMembersProps) => {
